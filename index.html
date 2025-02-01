@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery E-commerce</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.0/dist/full.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+  
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+    <style type="text/tailwindcss">
+
+      .navbar {
+          height: 80px; 
+        }
+           
+        .hero {
+          height: calc(100vh - 134px);
+        }
+      
+        .bg-primary-color {
+          background-color: #228B22;
+          color: white;
+        }
+        
+        .text-color {
+          color: #228B22;
+        }
+      
+        .btn-primary{
+          background-color: #228B22;
+          color: white;
+          padding: .75rem 2rem;
+        }
+      
+        .btn-bg-primary {
+            background-color: #179800;
+            border: none;
+            color: white;
+        }
+      
+        .btn-padding-1 {
+            padding: .75rem 1.5rem;
+          }
+      
+          .btn-padding-2 {
+            padding: .55rem 1.5rem;
+          }
+      
+          .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+      
+           & .marquee-content {
+              display: flex;
+              gap: 20px;
+              width: max-content;
+              animation: marquee 20s linear infinite;
+             }
+           }
+      
+           @keyframes marquee {
+            from {
+              transform: translateX(100%);
+            }
+            to {
+              transform: translateX(-100%);
+            }
+           }
+            
+      
+    </style>
+
+</head>
+
+<body>
+   <!-- navbar -->
+   <header id="home" class="">
+
+   <!-- navbar-part -->
+   <nav class="px-0 lg:px-24">
+
+      <div class="navbar flex justify-center items-center">
+
+        <div class="navbar-start flex  items-center">
+          <div>
+            <a href="index.html" class="btn btn-ghost text-xl w-32 md:w-36 hidden md:flex"> <img src="assets/img/logo-header.png" alt=""></a>
+          </div>
+          <div class="">
+            <a href="index.html" class="btn btn-ghost text-xl md:hidden hover:bg-transparent hover:shadow-none"> <img src="assets/img/leaf-logo.png" alt="" class="h-12 w-12"></a>
+          </div>
+        </div>
+
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1 text-base">
+            <li><a href="product.html" >Product</a></li>
+            <li><a href="service.html" >Services</a></li>
+            <li><a href="blog.html" >Blog</a></li>
+            <li><a href="about.html" >About</a></li>
+            <li><a href="contact.html" >Contact us</a></li>
+          </ul>
+        </div>
+
+        <div class="navbar-end flex gap-2">
+          <a class="btn bg-white border-none outline-none hidden md:flex "><img src="assets/icon/Vector.png" alt=""></a>
+          <a href="cart.html" class="btn bg-white border-none outline-none hidden md:flex "><img src="assets/icon/cart.png" alt=""></a>
+          <a class="btn bg-white border border-solid border-green-700 outline-none btn-padding-2 hidden md:flex">Login</a>
+          <a class="btn bg-white border-none outline-none btn-bg-primary btn-padding-1 hidden md:flex">Register</a>
+
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-xl"
+                fill= "none"
+                viewBox="0 0 24 24"
+                stroke="#179800">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </div>
+            <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content rounded-box z-[1] mt-5 w-52 py-6 gap-4 shadow -left-40 bg-primary-color " >
+            <li><a href="product.html" >Product</a></li>
+            <li><a href="service.html" >Services</a></li>
+            <li><a href="blog.html" >Blog</a></li>
+            <li><a href="about.html" >About</a></li>
+            <li><a href="contact.html" >Contact us</a></li>
+            <li><a href="cart.html" >Contact us</a></li>
+          </ul>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+   </nav>
+    
+   </header>
+
+  <!-- marque-section -->
+  <section class="marquee-container overflow-hidden bg-primary-color">
+    <div class="marquee-content py-2 flex justify-between items-center gap-4 ">
+
+      <img src="assets/img/tomato.webp" alt="" class="w-12">
+      <h2 class="text-lg md:text-lg font-semibold">Discount Up To 20% - 40% Off</h2>
+      <img src="assets/img/potato.webp" alt="" class="w-10">
+      <h2 class="text-lg md:text-lg font-semibold">Discount Up To 20% - 40% Off</h2>
+      <img src="assets/img/onion.webp" alt="" class="w-10">
+      <h2 class="text-lg md:text-lg font-semibold">Discount Up To 20% - 40% Off</h2>
+      <img src="assets/img/single-Leaf.webp" alt="" class="w-12">
+      <h2 class="text-lg md:text-lg font-semibold">Discount Up To 20% - 40% Off</h2>
+      
+    </div>
+  </section>
+
+  <!-- hero-section -->
+  <section class="hero">
+      <!-- DaisyUI Carousel -->
+      <div class="carousel w-full h-full">
+          <!-- Slide 1 -->
+          <div id="slide1" class="carousel-item relative w-full">
+              <img src="assets/img/hero-bg/hero-bg-1.webp" class="w-full h-full object-cover object-top" alt="Fruits" />
+              <div class="absolute flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-60">
+                  <h2 class="text-4xl font-bold text-white mb-4 capitalize">Welcome to Grocery Store</h2>
+                  <h1 class="text-7xl font-bold text-white mb-10">Farm-Fresh Organic Goods</h1>
+                  <h3 class="text-4xl font-bold text-white mb-4">Sale up to <span class="text-green-400">30% OFF</span></h3>
+                  <p class="text-lg text-white text-center mb-4">Get the juiciest and freshest fruits delivered to your home.</p>
+                  <a href="product.html" class="btn btn-primary rounded-lg font-semibold">Shop Now</a>
+              </div>
+              <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                  <a href="#slide4" class="btn btn-circle">❮</a> 
+                  <a href="#slide2" class="btn btn-circle">❯</a>
+              </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div id="slide2" class="carousel-item relative w-full">
+              <img src="assets/img/hero-bg/hero-bg-2.webp" class="w-full h-full object-cover object-top" alt="Vegetables" />
+              <div class="absolute flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-60">
+                  <h2 class="text-4xl font-bold text-white mb-4 capitalize">Organic Vegetables</h2>
+                  <h1 class="text-7xl font-bold text-white mb-10">Healthy & Fresh</h1>
+                  <h3 class="text-4xl font-bold text-white mb-4">Sale up to <span class="text-green-400">25% OFF</span></h3>
+                  <p class="text-lg text-white text-center mb-4">Healthy and organic vegetables for a better lifestyle.</p>
+                  <a href="product.html" class="btn btn-primary rounded-lg font-semibold">Shop Now</a>
+              </div>
+              <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                  <a href="#slide1" class="btn btn-circle">❮</a> 
+                  <a href="#slide3" class="btn btn-circle">❯</a>
+              </div>
+          </div>
+          
+          <!-- Slide 3 -->
+          <div id="slide3" class="carousel-item relative w-full">
+            <img src="assets/img/hero-bg/hero-bg-3.webp" class="w-full h-full object-cover object-top" alt="Dairy" />
+            <div class="absolute flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-60">
+                <h2 class="text-4xl font-bold text-white mb-4 capitalize">Pure Dairy Products</h2>
+                <h1 class="text-7xl font-bold text-white mb-10">Fresh & Natural</h1>
+                <h3 class="text-4xl font-bold text-white mb-4">Sale up to <span class="text-green-400">20% OFF</span></h3>
+                <p class="text-lg text-white text-center mb-4">Fresh and pure dairy products for your daily needs.</p>
+                <a href="product.html" class="btn btn-primary rounded-lg font-semibold">Shop Now</a>
+            </div>
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                <a href="#slide2" class="btn btn-circle">❮</a> 
+                <a href="#slide4" class="btn btn-circle">❯</a>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div id="slide4" class="carousel-item relative w-full">
+            <img src="assets/img/hero-bg/hero-bg-4.webp" class="w-full h-full object-cover object-top" alt="Groceries" />
+            <div class="absolute flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-60">
+                <h2 class="text-4xl font-bold text-white mb-4 capitalize">Daily Groceries</h2>
+                <h1 class="text-7xl font-bold text-white mb-10">Everything You Need</h1>
+                <h3 class="text-4xl font-bold text-white mb-4">Sale up to <span class="text-green-400">15% OFF</span></h3>
+                <p class="text-lg text-white text-center mb-4">Everything you need for your daily kitchen.</p>
+                <a href="product.html" class="btn btn-primary rounded-lg font-semibold">Shop Now</a>
+            </div>
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                <a href="#slide3" class="btn btn-circle">❮</a> 
+                <a href="#slide1" class="btn btn-circle">❯</a>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- category-section -->
+  <section class="container mx-auto my-12">
+    <h2 class="text-4xl font-bold text-center mb-8">Our Categories</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        
+     <!-- ক্যাটাগরি ১: ফল -->
+      <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden group">
+
+        <!-- ইমেজ -->
+        <img src="assets/img/fruits-category/fruits.webp" alt="Fruits" class="w-10/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-125">
+
+        <!-- ট্রান্সপারেন্ট ব্ল্যাক ইফেক্ট এবং হেডিং -->
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 ease-in-out flex justify-center items-center">
+            <a href="product.html">
+                <h2 class="text-5xl font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">Fruits</h2>
+            </a>
+        </div>
+
+      </div>
+
+        <!-- ক্যাটাগরি ২: শাকসবজি -->
+        <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden group">
+            <img src="assets/img/fruits-category/vegetable.webp" alt="Vegetables" class="w-10/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-125">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 ease-in-out flex justify-center items-center">
+            <a href="product.html"> 
+              <h2 class="text-4xl font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity 
+              duration-500 ease-in-out">Vegetables</h2>
+            </a> 
+            </div>
+        </div>
+
+        <!-- ক্যাটাগরি ৩: দুগ্ধজাত পণ্য -->
+        <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden group">
+            <img src="assets/img/fruits-category/dairy.webp" alt="Dairy" class="w-10/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 ease-in-out flex justify-center items-center">
+            <a href="product.html"> 
+              <h2 class="text-5xl font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">Dairy</h2>
+            </a> 
+            </div>
+        </div>
+
+        <!-- ক্যাটাগরি ৪: মাংস -->
+        <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden group">
+            <img src="assets/img/fruits-category/meats.webp" alt="Meat" class="w-10/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-125">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 ease-in-out flex justify-center items-center">
+            <a href="product.html"> 
+              <h2 class="text-5xl font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">Meat</h2>
+            </a> 
+            </div>
+        </div>
+
+        <!-- ক্যাটাগরি ৫: বেকারি -->
+        <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden group">
+            <img src="assets/img/fruits-category/bakery.webp" alt="Bakery" class="w-10/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-125">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 ease-in-out flex justify-center items-center">
+            <a href="product.html"> 
+              <h2 class="text-5xl font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">Bakery</h2>
+            </a> 
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Feature - Products -->
+  <section class="container mx-auto my-12">
+        <h2 class="text-3xl font-bold text-center mb-8">Featured Products</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="card bg-base-100 shadow-md">
+                <figure><img src="https://via.placeholder.com/300" alt="Product" class="w-full"></figure>
+                <div class="card-body">
+                    <h3 class="card-title">Apple</h3>
+                    <p>₹100 per kg</p>
+                    <button class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card bg-base-100 shadow-md">
+                <figure><img src="https://via.placeholder.com/300" alt="Product" class="w-full"></figure>
+                <div class="card-body">
+                    <h3 class="card-title">Carrot</h3>
+                    <p>₹50 per kg</p>
+                    <button class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card bg-base-100 shadow-md">
+                <figure><img src="https://via.placeholder.com/300" alt="Product" class="w-full"></figure>
+                <div class="card-body">
+                    <h3 class="card-title">Milk</h3>
+                    <p>₹60 per liter</p>
+                    <button class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+  </section>
+
+  <!-- Footer-Section -->
+  <!-- Footer-Section -->
+  <footer id="contact" class="bg-primary-color px-6 pb-12 lg:pb-20 pt-20"> 
+
+    <div class=" grid lg:grid-cols-3 lg:place-items-center place-content-center gap-8 lg:gap-0  lg:px-28 scroll-mt-16" ">
+
+      <!-- company-content -->
+      <div>
+        <a href="#home"> <img src="assets/img/logo-footer.png" alt=""></a>
+        <p class="text-sm mt-2">Discover a world of treats, toys, and essentials handpicked for your furry friends</p>
+      </div>
+
+      <!-- quicklink-content -->
+      <div class="navbar-center ">
+        <ul class="flex flex-col gap-4">
+             <li><a href="product.html" >Product</a></li>
+             <li><a href="service.html" >Services</a></li>
+             <li><a href="blog.html" >Blog</a></li>
+             <li><a href="about.html" >About</a></li>
+             <li><a href="contact.html" >Contact us</a></li>
+        </ul>
+      </div>
+
+      <!-- social-content -->
+      <div>
+        <h1 class="text-base">Follow us</h>
+          <ul class="flex lg:justify-around items-center gap-4 mt-6 text-xl">
+                    
+            <li>
+              <a href="" class="marquee-bar-bg p-4 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 hover:text-green-800 transition duration-300 " > <i class="aspect-square fa-brands fa-facebook-f"></i> </a>
+            </li>
+            <li>
+              <a href="" class="marquee-bar-bg p-4 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 hover:text-green-800 transition duration-300 " > <i class="aspect-square fa-brands fa-instagram"></i> </a>
+            </li>
+            <li>
+              <a href="" class="marquee-bar-bg p-4 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 hover:text-green-800 transition duration-300 " ><i class="aspect-square fa-brands fa-linkedin-in"></i></a>
+            </li>
+            <li>
+              <a href="" class="marquee-bar-bg p-4 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 hover:text-green-800 transition duration-300 " ><i class="aspect-square fa-brands fa-youtube"></i></a>
+            </li>
+
+          </ul>
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
