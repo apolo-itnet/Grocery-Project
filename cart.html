@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,7 @@
     <style type="text/tailwindcss">
 
       .navbar {
-          height: 80px; 
+          height: 60px; 
         }
            
         .hero {
@@ -28,35 +28,41 @@
         }
       
         .bg-primary-color {
-          background-color: #228B22;
+          background-color: #DEF9EC;
+          background-color: #16a34a;
+          background-color: #3BB77E;
           color: white;
         }
         
         .text-color {
           color: #228B22;
+          color: #3BB77E;
         }
       
         .btn-primary{
           background-color: #228B22;
+          background-color: #3BB77E;
           color: white;
+          border: none;
           padding: .75rem 2rem;
         }
-      
+        
         .btn-bg-primary {
-            background-color: #179800;
-            border: none;
-            color: white;
+          background-color: #179800;
+          background-color: #3BB77E;
+          border: none;
+          color: white;
         }
       
         .btn-padding-1 {
             padding: .75rem 1.5rem;
-          }
+        }
       
-          .btn-padding-2 {
+        .btn-padding-2 {
             padding: .55rem 1.5rem;
-          }
+        }
       
-          .marquee-container {
+        .marquee-container {
             width: 100%;
             overflow: hidden;
             position: relative;
@@ -67,16 +73,16 @@
               width: max-content;
               animation: marquee 20s linear infinite;
              }
-           }
+        }
       
-           @keyframes marquee {
+        @keyframes marquee {
             from {
               transform: translateX(100%);
             }
             to {
               transform: translateX(-100%);
             }
-           }
+        }
             
       
     </style>
@@ -87,91 +93,138 @@
    <!-- navbar -->
    <header id="home" class="">
 
-    <!-- navbar-part -->
-    <nav class="px-0 lg:px-24">
- 
-       <div class="navbar flex justify-center items-center">
- 
-         <div class="navbar-start flex  items-center">
-           <div>
-             <a href="index.html" class="btn btn-ghost text-xl w-32 md:w-36 hidden md:flex"> <img src="assets/img/logo-header.png" alt=""></a>
-           </div>
-           <div class="">
-             <a href="index.html" class="btn btn-ghost text-xl md:hidden hover:bg-transparent hover:shadow-none"> <img src="assets/img/leaf-logo.png" alt="" class="h-12 w-12"></a>
-           </div>
-         </div>
- 
-         <div class="navbar-center hidden lg:flex">
-           <ul class="menu menu-horizontal px-1 text-base">
-             <li><a href="product.html" >Product</a></li>
-             <li><a href="service.html" >Services</a></li>
-             <li><a href="blog.html" >Blog</a></li>
-             <li><a href="about.html" >About</a></li>
-             <li><a href="contact.html" >Contact us</a></li>
-           </ul>
-         </div>
- 
-         <div class="navbar-end flex gap-2">
-           <a class="btn bg-white border-none outline-none hidden md:flex "><img src="assets/icon/Vector.png" alt=""></a>
-           <a href="cart.html" class="btn bg-white border-none outline-none hidden md:flex "><img src="assets/icon/cart.png" alt=""></a>
-           <a class="btn bg-white border border-solid border-green-700 outline-none btn-padding-2 hidden md:flex">Login</a>
-           <a class="btn bg-white border-none outline-none btn-bg-primary btn-padding-1 hidden md:flex">Register</a>
- 
-           <div class="dropdown">
-             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-               <svg
-                 xmlns="http://www.w3.org/2000/svg"
-                 class="h-8 w-8 text-xl"
-                 fill= "none"
-                 viewBox="0 0 24 24"
-                 stroke="#179800">
-                 <path
-                   stroke-linecap="round"
-                   stroke-linejoin="round"
-                   stroke-width="2"
-                   d="M4 6h16M4 12h16M4 18h16" />
-               </svg>
-             </div>
-             <ul
-             tabindex="0"
-             class="menu menu-sm dropdown-content rounded-box z-[1] mt-5 w-52 py-6 gap-4 shadow -left-40 bg-primary-color " >
-             <li><a href="product.html" >Product</a></li>
-             <li><a href="service.html" >Services</a></li>
-             <li><a href="blog.html" >Blog</a></li>
-             <li><a href="about.html" >About</a></li>
-             <li><a href="contact.html" >Contact us</a></li>
-             <li><a href="cart.html" >Contact us</a></li>
-           </ul>
-             </ul>
-           </div>
-         </div>
- 
-       </div>
-    </nav>
-     
-    </header>
- 
-   <!-- marque-section -->
-   <section class="marquee-container overflow-hidden bg-primary-color">
-     <div class="marquee-content py-2 flex justify-between items-center gap-4 ">
- 
-       <img src="assets/img/tomato.webp" alt="" class="w-12">
-       <h2 class="text-lg md:text-lg font-semibold">Discount Up To 20% - 40% Off</h2>
-       <img src="assets/img/potato.webp" alt="" class="w-10">
-       <h2 class="text-lg md:text-lg font-semibold">Discount Up To 20% - 40% Off</h2>
-       <img src="assets/img/onion.webp" alt="" class="w-10">
-       <h2 class="text-lg md:text-lg font-semibold">Discount Up To 20% - 40% Off</h2>
-       <img src="assets/img/single-Leaf.webp" alt="" class="w-12">
-       <h2 class="text-lg md:text-lg font-semibold">Discount Up To 20% - 40% Off</h2>
-       
-     </div>
-   </section>
+
+      <!-- টপ পার্ট -->
+      <nav class="p-4">
+          <div class="container mx-auto flex justify-around items-center">
+
+              <!-- লোগো -->
+              <div class="flex items-start justify-start ">
+                <div>
+                  <a href="index.html" class="btn btn-ghost text-xl w-28 md:w-28 hidden md:flex px-0"> <img src="assets/img/logo-header.png" alt=""></a>
+                </div>
+                <div class="">
+                  <a href="index.html" class="btn btn-ghost text-xl md:hidden hover:bg-transparent hover:shadow-none"> <img src="assets/img/leaf-logo.png" alt="" class="h-12 w-12"></a>
+                </div>
+              </div>
+
+              <!-- সেন্টার মেনু -->
+              <div class="flex items-center"> 
+
+                <!-- category-menu -->
+                <div class="relative bg-gray-200 px-4 py-2 ">
+                    <button class="flex items-center space-x-2">
+                        <span>All Categories</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </button>
+                    <!-- ড্রপডাউন মেনু -->
+                    <div class="absolute hidden bg-white text-black mt-2 p-2 rounded shadow-lg">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Fruits</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Vegetables</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Dairy</a>
+                    </div>
+                </div>
+
+                <!-- সার্চ বার -->
+                <div class="flex items-center bg-gray-200 overflow-hidden m-0">
+                    <input type="text" placeholder="Search for Items..." class="px-4 py-2 w-64 bg-gray-200 text-black focus:outline-none">
+                    <button class="btn-bg-primary px-4 py-2">
+                        <i class='bx bx-search text-white'></i>
+                    </button>
+                </div>
+
+              </div>
+
+              <!-- cart & wish list -->
+              <div  class="flex justify-center items-center gap-4">
+
+                <!-- উইশলিস্ট -->
+                <a href="#" class="hover:bg-[#3BB77E] hover:text-white text-black text-sm py-1 px-1 flex items-center gap-2 rounded-lg w-24"> <i class='bx bx-heart text-3xl'></i>Wishlist</a>
+
+              <!-- কার্ট -->
+                <a href="#" class="hover:bg-[#3BB77E] hover:text-white text-black text-sm py-1 px-1 flex items-center gap-2 rounded-lg w-24"> <i class='bx bx-cart text-3xl'></i>My Cart</a>
+
+              </div>
+              
+    
+              <!-- ডান পাশের মেনু -->
+              <div class="flex items-center space-x-6">
+              
+              <!-- অ্যাকাউন্ট ড্রপডাউন -->
+              <div class="relative">
+                        <button class="flex items-center space-x-2">
+                            <i class='bx bx-user-circle text-3xl'></i>
+                            <i class='bx bx-chevron-down text-2xl'></i>
+                        </button>
+                        <!-- ড্রপডাউন মেনু -->
+                        <div class="absolute hidden bg-white text-black mt-2 p-2 rounded shadow-lg">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Profile</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Logout</a>
+                        </div>
+              </div>
+            </div>
+
+          </div>
+      </nav>
+  
+      <!-- ডাউন পার্ট -->
+      <nav class="pb-4">
+          <div class="container mx-auto flex justify-around items-center">
+              <!-- Browse All Categories বাটন -->
+              <button class="btn-bg-primary px-4 py-2 rounded flex items-center space-x-2">
+                  <i class='bx bx-menu'></i>
+                  <span>Browse All Categories</span>
+              </button>
+  
+              <!-- সেন্টার মেনু -->
+              <div class="hidden lg:flex">
+                <ul class="flex justify-between items-center text-base">
+                  <li class="hover:bg-[#3bb77e] hover:text-white transition-colors duration-500 ease-in-out rounded-lg p-2 w-24 text-center">
+                    <a href="blog.html">Hot Deals</a></li>
+
+                  <li class="hover:bg-[#3bb77e] hover:text-white transition-colors duration-500 ease-in-out rounded-lg p-2 w-24 text-center">
+                    <a href="shop.html">Shop</a></li>
+
+                  <li class="hover:bg-[#3bb77e] hover:text-white transition-colors duration-500 ease-in-out rounded-lg p-2 w-24 text-center  text-base "><a href="service.html"  ">Service</a></li>
+
+                  <li class="hover:bg-[#3bb77e] hover:text-white transition-colors duration-500 ease-in-out rounded-lg p-2 w-24 text-center  text-base "><a href="about.html"  >About</a></li>
+
+                  <li class="hover:bg-[#3bb77e] hover:text-white transition-colors duration-500 ease-in-out rounded-lg  p-2 w-24 text-center text-base "><a href="contact.html"  >Contact us</a></li>
+
+                </ul>
+              </div>
+  
+              <!-- ফোন নম্বর -->
+              <div class="flex items-center space-x-2">
+                  <i class='bx bx-headphone text-2xl'></i>
+                  <h3 class="text-green-600">1233-7777 <span class="text-black"> 24/7 Support Center</span></h3>
+              </div>
+          </div>
+      </nav>
+    
+   </header>
+
+  <!-- marque-section -->
+  <section class="marquee-container overflow-hidden bg-primary-color">
+      <div class="marquee-content py-1 flex justify-between items-center gap-4 ">
+  
+        <img src="assets/img/tomato.webp" alt="" class="w-12">
+        <h2 class="text-lg md:text-lg font-semibold">Discount Up To 20% - 40% Off</h2>
+        <img src="assets/img/potato.webp" alt="" class="w-10">
+        <h2 class="text-lg md:text-lg font-semibold">Discount Up To 20% - 40% Off</h2>
+        <img src="assets/img/onion.webp" alt="" class="w-10">
+        <h2 class="text-lg md:text-lg font-semibold">Discount Up To 20% - 40% Off</h2>
+        <img src="assets/img/single-Leaf.webp" alt="" class="w-12">
+        <h2 class="text-lg md:text-lg font-semibold">Discount Up To 20% - 40% Off</h2>
+        
+      </div>
+  </section>
 
 
   <!-- Footer-Section -->
   <footer id="contact" class="bg-primary-color px-6 pb-12 lg:pb-20 pt-20"> 
 
-    <div class=" grid lg:grid-cols-3 lg:place-items-center place-content-center gap-8 lg:gap-0  lg:px-28 scroll-mt-16" ">
+    <div class=" grid lg:grid-cols-3 lg:place-items-center lg:items-start items-start gap-8 lg:gap-0  lg:px-28 scroll-mt-16" ">
 
       <!-- company-content -->
       <div>
