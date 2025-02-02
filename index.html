@@ -19,12 +19,12 @@
   
     <style type="text/tailwindcss">
 
-      .navbar {
+        .navbar {
           height: 60px; 
         }
            
         .hero {
-          height: calc(100vh - 134px);
+          height: calc(100vh - 128px);
         }
       
         .bg-primary-color {
@@ -60,6 +60,14 @@
       
         .btn-padding-2 {
             padding: .55rem 1.5rem;
+        }
+
+        .news-letter-bg{
+          background: url(./assets/img/news-letter/back-bg.png)  ;
+          background-position: 530px;
+          background-size: cover;
+          background-repeat: no-repeat;
+         
         }
       
         .marquee-container {
@@ -630,34 +638,36 @@
     </div>
   </section>
 
-  <section id="news-letter" class="  relative -bottom-40 lg:-bottom-32 lg:px-28 ">
+  <!-- newsletter-section -->
+  <section class="container mx-auto my-12 lg:py-10 lg:px-14">
+    <div class="flex flex-col lg:flex-row justify-between items-center shadow-md py-8 px-12 rounded-xl gap-8 lg:gap-0 relative overflow-hidden">
 
-    <div class=" bg-slate-800/80 flex flex-col lg:flex-row justify-around items-center shadow-xl py-8 px-6  lg:py-10 lg:px-14 rounded-lg gap-8 lg:gap-0 ">
+      <!-- Background image -->
+      <div class="absolute inset-0 bg-[url('./assets/img/news-letter/back-bg.png')] bg-cover bg-no-repeat bg-[position:530px]"></div>
+      
+      <!-- Overlay (transparent background color) -->
+      <div class="absolute inset-0 bg-green-400/20"></div>
+      
+      <!-- Content -->
+      <div class="relative z-10 group">
+        <img src="assets/img/news-letter/bag-shop.png" alt="news-letter-image" class="w-9/12 group-hover:scale-105 transition-transform duration-700 cursor-pointer">
+      </div>
 
-      <!-- image-content -->
-       <div>
-        <img src="assets/img/news-letter/vegetable-busket.png" alt="news-letter-image" class="w-full">
-       </div>
-
-       <!-- text-content -->
-       <div class="text-center lg:text-left">
-        <h1 class=" text-2xl lg:text-4xl font-bold mb-3 lg:mb-6">Get Grocery News!</h1>
-        <p class=" text-sm lg:text-base font-semibold mb-4 lg:mb-8 " >Exclusive training tips, ticks, product deals and more.</p>
-         <div class="flex">
-          <input type="text" placeholder="Enter email" class=" outline-none border-2 pl-1 rounded-none w-full" />
-          <button class="btn-primary btn-padding-1 text-white text-sm lg:text-base font-bold">Subscribe</button>
+      <div class="text-center lg:text-left relative z-10">
+        <h1 class="text-2xl lg:text-5xl font-bold mb-3 lg:mb-6">Don't miss our daily amazing deals</h1>
+        <p class="text-sm lg:text-base font-semibold mb-4 lg:mb-8">Exclusive training tips, ticks, product deals and more.</p>
+        <div class="flex">
+          <input type="text" placeholder="Enter email" class="outline-none border-2 pl-1 rounded-none w-8/12">
+          <button class="btn-primary btn-padding-1 text-white text-sm lg:text-base font-bold rounded-r-lg">Subscribe</button>
         </div>
-
-
-       </div>
-
+      </div>
 
     </div>
-
   </section>
 
+
   <!-- Footer-Section -->
-  <footer id="contact" class="bg-primary-color px-6 pb-12 lg:pb-20 pt-40"> 
+  <footer id="contact" class="bg-primary-color px-6 py-12 lg:pb-20"> 
 
     <div class=" grid lg:grid-cols-3 lg:place-items-center lg:items-start items-start gap-8 lg:gap-0  lg:px-28 scroll-mt-16" ">
 
@@ -702,6 +712,8 @@
     </div>
 
   </footer>
+
+
 
 </body>
 </html>
