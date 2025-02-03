@@ -28,14 +28,11 @@
         }
       
         .bg-primary-color {
-          background-color: #DEF9EC;
-          background-color: #16a34a;
           background-color: #3BB77E;
           color: white;
         }
         
         .text-color {
-          color: #228B22;
           color: #3BB77E;
         }
       
@@ -48,10 +45,17 @@
         }
         
         .btn-bg-primary {
-          background-color: #179800;
           background-color: #3BB77E;
           border: none;
           color: white;
+        }
+
+        .menu-hover {
+          @apply hover:bg-[#3bb77e] hover:text-white transition-colors duration-200 ease-in-out
+        }
+
+        .scale-hover {
+          @apply hover:scale-105 transition-transform duration-700 ease-in-out rounded-lg 
         }
       
         .btn-padding-1 {
@@ -101,11 +105,11 @@
    <!-- navbar -->
    <header id="home" class="">
 
-      <!-- টপ পার্ট -->
+      <!-- top-nav -->
       <nav class="py-3 border-b">
           <div class="container mx-auto flex justify-around items-center">
 
-              <!-- লোগো -->
+              <!-- logo-->
               <div class="flex items-start justify-start ">
                 <div>
                   <a href="index.html" class="btn btn-ghost text-xl w-28 md:w-28 hidden md:flex px-0"> <img src="assets/img/logo-header.png" alt=""></a>
@@ -115,24 +119,26 @@
                 </div>
               </div>
 
-              <!-- সেন্টার মেনু -->
+              <!-- center-menu -->
               <div class="flex items-center"> 
 
-                <!-- category-menu -->
-                <div class="relative bg-gray-200 px-4 py-2 ">
-                    <button class="flex items-center space-x-2">
-                        <span>All Categories</span>
-                        <i class='bx bx-chevron-down'></i>
-                    </button>
-                    <!-- ড্রপডাউন মেনু -->
-                    <div class="absolute hidden bg-white text-black mt-2 p-2 rounded shadow-lg">
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Fruits</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Vegetables</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Dairy</a>
-                    </div>
-                </div>
+                <!-- all- category-menu -->
+                <details class="dropdown rounded-none bg-gray-200 cursor-pointer">
+                  <summary class="h-10 px-2 border-r-2  border-gray-500 rounded-none flex items-center justify-center"><span>All Categories</span>
+                    <i class='bx bx-chevron-down text-xl'></i></summary>
+                  
+                    <!-- dropdown-menu -->
+                    <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 top-12  shadow-lg border border-gray-200">
+                      <li class="hover:bg-[#3BB77E] hover:text-white rounded-lg text-sm "><a href="">Fruits</a></li>
+                      <li class="hover:bg-[#3BB77E] hover:text-white rounded-lg text-sm "><a href="">Vegetables</a></li>
+                      <li class="hover:bg-[#3BB77E] hover:text-white rounded-lg text-sm "><a href="">Meats</a></li>
+                      <li class="hover:bg-[#3BB77E] hover:text-white rounded-lg text-sm "><a href="">Dairy</a></li>
+                      <li class="hover:bg-[#3BB77E] hover:text-white rounded-lg text-sm "><a href="">Bakery</a></li>
+                      <li class="hover:bg-[#3BB77E] hover:text-white rounded-lg text-sm "><a href="">Drinks</a></li>
+                    </ul>
+                </details>
 
-                <!-- সার্চ বার -->
+                <!-- search-bar -->
                 <div class="flex items-center bg-gray-200 overflow-hidden m-0">
                     <input type="text" placeholder="Search for Items..." class="px-4 py-2 w-64 bg-gray-200 text-black focus:outline-none">
                     <button class="btn-bg-primary px-4 py-2">
@@ -142,57 +148,125 @@
 
               </div>
 
-              <!-- cart & wish list -->
+              <!-- wishlist - cart - profile -->
               <div  class="flex justify-center items-center gap-4">
 
-                <!-- উইশলিস্ট -->
+                <!-- wishlist -->
                 <a href="#" class="hover:bg-[#3BB77E] hover:text-white text-black text-sm py-1 px-1 flex items-center gap-2 rounded-lg w-24"> <i class='bx bx-heart text-3xl'></i>Wishlist</a>
 
-              <!-- কার্ট -->
+                <!-- cart -->
                 <a href="#" class="hover:bg-[#3BB77E] hover:text-white text-black text-sm py-1 px-1 flex items-center gap-2 rounded-lg w-24"> <i class='bx bx-cart text-3xl'></i>My Cart</a>
 
-              </div>
-              
-    
-              <!-- ডান পাশের মেনু -->
-              <div class="flex items-center space-x-6">
-              
-              <!-- অ্যাকাউন্ট ড্রপডাউন -->
+                <!-- profile-icon-dropdown -->
               <div class="relative">
                 <div class="dropdown">
                   <div tabindex="0" role="button" class="btn m-1">
                     <i class='bx bx-user-circle text-3xl'></i>
                     <i class='bx bx-chevron-down text-2xl'></i>
                   </div>
-                    <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                    <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-40 p-2 top-16 shadow">
                       <li class="hover:bg-green-300 transition-all duration-500 rounded-lg"><a href="" class="font-semibold">Login</a></li>
                       <li class="hover:bg-green-300 transition-all duration-500 rounded-lg"><a href="" class="font-semibold">Register</a></li>
                     </ul>
                   </div>
               </div>
-
             </div>
-
           </div>
       </nav>
   
-      <!-- ডাউন পার্ট -->
+      <!-- navbar-2 -->
       <nav class="py-2">
           <div class="container mx-auto flex justify-around items-center">
-              <!-- Browse All Categories বাটন -->
-              <button class="btn-bg-primary px-4 py-2 rounded flex items-center space-x-2">
-                  <i class='bx bx-menu'></i>
-                  <span>Browse All Categories</span>
-              </button>
+
+              <!-- Browse All Categories button -->
+              <button class="btn-bg-primary px-4 py-2 rounded flex items-center space-x-2"> <i class='bx bx-menu'></i> <span>Browse All Categories</span> </button>
   
-              <!-- সেন্টার মেনু -->
+              <!-- center-menu -->
               <div class="hidden lg:flex">
                 <ul class="flex justify-between items-center text-base">
-                  <li class="hover:bg-[#3bb77e] hover:text-white transition-colors duration-500 ease-in-out rounded-lg p-2 w-24 text-center">
-                    <a href="blog.html">Hot Deals</a></li>
+                  <li class="menu-hover rounded-lg p-2 w-24 text-center">
+                    <a href="index.html">Home</a></li>
 
-                  <li class="hover:bg-[#3bb77e] hover:text-white transition-colors duration-500 ease-in-out rounded-lg p-2 w-24 text-center">
-                    <a href="shop.html">Shop</a></li>
+                  <!-- mega-menu -->
+                  <li class=""> 
+                    <div class="dropdown dropdown-hover relative ">
+                      <div tabindex="0" role="button" class=" m-1"><a href="#" class="flex items-center justify-center menu-hover w-24 py-1 rounded-lg">Shop<i class='bx bx-chevron-down text-2xl'></i>
+                      </a> </div>
+                      <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] p-2 min-w-max shadow flex flex-col lg:flex-row border-t top-14 -left-96 text-base">
+                        
+                        <!-- veg-menu -->
+                        <li>
+                          <a class="font-bold scale-hover">Fresh Vegetable <img src="assets/img/fruits-category/vegetable.webp" alt="" class="w-14"></a>
+                          <ul class="p-0 m-0">
+                            <li class=" menu-hover rounded-lg"><a class="h-10">Potato, Onion & Tomato</a></li>
+                            <li class=" menu-hover rounded-lg" class=" menu-hover rounded-lg"><a class="h-10">Cucumber & Capsicum</a></li>
+                            <li class=" menu-hover rounded-lg" class=" menu-hover rounded-lg"><a class="h-10">Leafy Vegetables</a></li>
+                            <li class=" menu-hover rounded-lg" class=" menu-hover rounded-lg"><a class="h-10">Root Vegetables</a></li>
+                            <li class=" menu-hover rounded-lg" class=" menu-hover rounded-lg"><a class="h-10">Pumpkin & Drumstick</a></li>
+                          </ul>
+                        </li>
+
+                        <!-- meats-menu -->
+                        <li>
+                          <a class="font-bold scale-hover"
+                          >Meats<img src="assets/img/fruits-category/meats.webp" alt="" class="w-14"></a>
+                          <ul>
+                            <li class=" menu-hover rounded-lg"><a class="h-10">Beef</a></li>
+                            <li class=" menu-hover rounded-lg"><a class="h-10">Broiler Chicken</a></li>
+                            <li class=" menu-hover rounded-lg"><a class="h-10">Turkey</a></li>
+                            <li class=" menu-hover rounded-lg"><a class="h-10">Fresh Mutton</a></li>
+                            <li class=" menu-hover rounded-lg"><a class="h-10">Frozen Koyel</a></li>
+
+                            
+                          </ul>
+                        </li>
+
+                        <!-- fish-menu -->
+                        <li>
+                          <a class="font-bold scale-hover">Fish <img src="assets/img/fruits-category/fish.webp" alt="" class="w-14"></a>
+                          <ul>
+                            <li class=" menu-hover rounded-lg"><a class="h-10">Pond fish</a></li>
+                            <li class=" menu-hover rounded-lg"><a class="h-10">Frozen Fish</a></li>
+                            <li class=" menu-hover rounded-lg"><a class="h-10">Marine Water Fish</a></li>
+                            <li class=" menu-hover rounded-lg"><a class="h-10">Prawns & Shrimps</a></li>
+                            <li class=" menu-hover rounded-lg"><a class="h-10">Other Seafood</a></li>
+                          </ul>
+                        </li>
+
+                        <!-- bakery-menu -->
+                        <li>
+                          <a class="font-bold scale-hover">Bakery <img src="assets/img/fruits-category/bakery.webp" alt="" class="w-14"></a>
+                          <ul>
+                            <li class=" menu-hover rounded-lg"><a class="h-10">Bread & Garlic Bread</a></li>
+                            <li class=" menu-hover rounded-lg"><a class="h-10">Puffs & Cheese</a></li>
+                            <li class=" menu-hover rounded-lg"><a class="h-10">Patties & Sandwiches</a></li>
+
+                            <!-- dairy-menu -->
+                            <li>
+                              <a class="font-bold scale-hover">Dairy <img src="assets/img/fruits-category/dairy.webp" alt="" class="w-14"></a>
+                              <ul>
+                                <li class=" menu-hover rounded-lg"><a class="h-10">Milk & Crud</a></li>
+                                <li class=" menu-hover rounded-lg"><a class="h-10">Panner & Cream</a></li>
+                                <li class=" menu-hover rounded-lg"><a class="h-10">Butter & Butter Milk</a></li>
+                                <li class=" menu-hover rounded-lg"><a class="h-10">Chesse & Soya Milk</a></li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+
+                        <!-- fruits-menu -->
+                        <li>
+                          <a class="font-bold scale-hover">Fruits<img src="assets/img/fruits-category/fruits.webp" alt="" class="w-14"></a>
+                          <ul>
+                            <li class=" menu-hover rounded-lg"><a class="h-10">Apples & Mangos</a></li>
+                            <li class=" menu-hover rounded-lg"><a class="h-10">Seasonal Fruits</a></li>
+                            <li class=" menu-hover rounded-lg"><a class="h-10">Papaya & Dragon Fruits</a></li>
+                            <li class=" menu-hover rounded-lg"><a class="h-10">Organic Fruits</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
 
                   <li class="hover:bg-[#3bb77e] hover:text-white transition-colors duration-500 ease-in-out rounded-lg p-2 w-24 text-center  text-base "><a href="service.html"  ">Service</a></li>
 
@@ -203,7 +277,7 @@
                 </ul>
               </div>
   
-              <!-- ফোন নম্বর -->
+              <!-- phone-number -->
               <div class="flex items-center space-x-2">
                   <i class='bx bx-headphone text-2xl'></i>
                   <h3 class="text-green-600">1233-7777 <span class="text-black"> 24/7 Support Center</span></h3>
@@ -226,7 +300,8 @@
                   <h1 class="text-7xl font-bold text-white mb-10">Farm-Fresh Organic Goods</h1>
                   <h3 class="text-4xl font-bold text-white mb-4">Sale up to <span class="text-green-400">30% OFF</span></h3>
                   <p class="text-lg text-white text-center mb-4">Get the juiciest and freshest fruits delivered to your home.</p>
-                  <a href="product.html" class="btn btn-primary rounded-lg font-semibold">Shop Now</a>
+                  <button class="rounded-lg font-semibold px-4 py-2 gap-2 flex items-center bg-green-800 text-white group hover:px-6 duration-300">Shop Now <i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i>
+                  </button>
               </div>
               <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                   <a href="#slide4" class="btn btn-circle">❮</a> 
