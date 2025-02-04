@@ -28,6 +28,7 @@
         }
       
         .bg-primary-color {
+          background-color: #10b981;
           background-color: #3BB77E;
           color: white;
         }
@@ -38,6 +39,7 @@
       
         .btn-primary{
           background-color: #228B22;
+          background-color: #10b981;
           background-color: #3BB77E;
           color: white;
           border: none;
@@ -51,11 +53,15 @@
         }
 
         .menu-hover {
-          @apply hover:bg-[#3bb77e] hover:text-white transition-colors duration-200 ease-in-out
+          @apply hover:bg-[#3BB77E] hover:text-white transition-colors duration-200 ease-in-out cursor-pointer
         }
 
         .scale-hover {
           @apply hover:scale-105 transition-transform duration-700 ease-in-out rounded-lg 
+        }
+
+        .discount-banner {
+          background: url(assets/img/banner/disc-banner-1.jpg) no-repeat center / cover ;
         }
       
         .btn-padding-1 {
@@ -103,9 +109,9 @@
 
 <body>
    <!-- navbar -->
-   <header id="home" class="">
+   <header id="home">
 
-      <!-- top-nav -->
+      <!-- navbar-1 -->
       <nav class="py-3 border-b">
           <div class="container mx-auto flex justify-around items-center">
 
@@ -152,10 +158,10 @@
               <div  class="flex justify-center items-center gap-4">
 
                 <!-- wishlist -->
-                <a href="#" class="hover:bg-[#3BB77E] hover:text-white text-black text-sm py-1 px-1 flex items-center gap-2 rounded-lg w-24"> <i class='bx bx-heart text-3xl'></i>Wishlist</a>
+                <a href="#" class="menu-hover text-sm py-1 px-1 flex items-center gap-2 rounded-lg w-24"> <i class='bx bx-heart text-3xl'></i>Wishlist</a>
 
                 <!-- cart -->
-                <a href="#" class="hover:bg-[#3BB77E] hover:text-white text-black text-sm py-1 px-1 flex items-center gap-2 rounded-lg w-24"> <i class='bx bx-cart text-3xl'></i>My Cart</a>
+                <a href="#" class="menu-hover text-sm py-1 px-1 flex items-center gap-2 rounded-lg w-24"> <i class='bx bx-cart text-3xl'></i>My Cart</a>
 
                 <!-- profile-icon-dropdown -->
               <div class="relative">
@@ -165,8 +171,8 @@
                     <i class='bx bx-chevron-down text-2xl'></i>
                   </div>
                     <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-40 p-2 top-16 shadow">
-                      <li class="hover:bg-green-300 transition-all duration-500 rounded-lg"><a href="" class="font-semibold">Login</a></li>
-                      <li class="hover:bg-green-300 transition-all duration-500 rounded-lg"><a href="" class="font-semibold">Register</a></li>
+                      <li class="menu-hover rounded-lg"><a href="" class="font-semibold">Login</a></li>
+                      <li class="menu-hover rounded-lg"><a href="" class="font-semibold">Register</a></li>
                     </ul>
                   </div>
               </div>
@@ -196,19 +202,19 @@
                         
                         <!-- veg-menu -->
                         <li>
-                          <a class="font-bold scale-hover">Fresh Vegetable <img src="assets/img/fruits-category/vegetable.webp" alt="" class="w-14"></a>
+                          <a href="shop.html" class="font-bold scale-hover">Fresh Vegetable <img src="assets/img/fruits-category/vegetable.webp" alt="" class="w-14"></a>
                           <ul class="p-0 m-0">
-                            <li class=" menu-hover rounded-lg"><a class="h-10">Potato, Onion & Tomato</a></li>
-                            <li class=" menu-hover rounded-lg" class=" menu-hover rounded-lg"><a class="h-10">Cucumber & Capsicum</a></li>
-                            <li class=" menu-hover rounded-lg" class=" menu-hover rounded-lg"><a class="h-10">Leafy Vegetables</a></li>
-                            <li class=" menu-hover rounded-lg" class=" menu-hover rounded-lg"><a class="h-10">Root Vegetables</a></li>
-                            <li class=" menu-hover rounded-lg" class=" menu-hover rounded-lg"><a class="h-10">Pumpkin & Drumstick</a></li>
+                            <li class=" menu-hover rounded-lg"><a href="#" class="h-10">Potato, Onion & Tomato</a></li>
+                            <li class=" menu-hover rounded-lg" class=" menu-hover rounded-lg"><a href="#" class="h-10">Cucumber & Capsicum</a></li>
+                            <li class=" menu-hover rounded-lg" class=" menu-hover rounded-lg"><a href="#" class="h-10">Leafy Vegetables</a></li>
+                            <li class=" menu-hover rounded-lg" class=" menu-hover rounded-lg"><a href="#" class="h-10">Root Vegetables</a></li>
+                            <li class=" menu-hover rounded-lg" class=" menu-hover rounded-lg"><a href="#" class="h-10">Pumpkin & Drumstick</a></li>
                           </ul>
                         </li>
 
                         <!-- meats-menu -->
                         <li>
-                          <a class="font-bold scale-hover"
+                          <a href="shop.html" class="font-bold scale-hover"
                           >Meats<img src="assets/img/fruits-category/meats.webp" alt="" class="w-14"></a>
                           <ul>
                             <li class=" menu-hover rounded-lg"><a class="h-10">Beef</a></li>
@@ -223,7 +229,7 @@
 
                         <!-- fish-menu -->
                         <li>
-                          <a class="font-bold scale-hover">Fish <img src="assets/img/fruits-category/fish.webp" alt="" class="w-14"></a>
+                          <a href="shop.html" class="font-bold scale-hover">Fish <img src="assets/img/fruits-category/fish.webp" alt="" class="w-14"></a>
                           <ul>
                             <li class=" menu-hover rounded-lg"><a class="h-10">Pond fish</a></li>
                             <li class=" menu-hover rounded-lg"><a class="h-10">Frozen Fish</a></li>
@@ -235,7 +241,7 @@
 
                         <!-- bakery-menu -->
                         <li>
-                          <a class="font-bold scale-hover">Bakery <img src="assets/img/fruits-category/bakery.webp" alt="" class="w-14"></a>
+                          <a href="shop.html" class="font-bold scale-hover">Bakery <img src="assets/img/fruits-category/bakery.webp" alt="" class="w-14"></a>
                           <ul>
                             <li class=" menu-hover rounded-lg"><a class="h-10">Bread & Garlic Bread</a></li>
                             <li class=" menu-hover rounded-lg"><a class="h-10">Puffs & Cheese</a></li>
@@ -256,7 +262,7 @@
 
                         <!-- fruits-menu -->
                         <li>
-                          <a class="font-bold scale-hover">Fruits<img src="assets/img/fruits-category/fruits.webp" alt="" class="w-14"></a>
+                          <a href="shop.html" class="font-bold scale-hover">Fruits<img src="assets/img/fruits-category/fruits.webp" alt="" class="w-14"></a>
                           <ul>
                             <li class=" menu-hover rounded-lg"><a class="h-10">Apples & Mangos</a></li>
                             <li class=" menu-hover rounded-lg"><a class="h-10">Seasonal Fruits</a></li>
@@ -268,11 +274,14 @@
                     </div>
                   </li>
 
-                  <li class="hover:bg-[#3bb77e] hover:text-white transition-colors duration-500 ease-in-out rounded-lg p-2 w-24 text-center  text-base "><a href="service.html"  ">Service</a></li>
+                  <!-- service-menu -->
+                  <li class="menu-hover rounded-lg p-2 w-24 text-center  text-base "><a href="service.html"  ">Service</a></li>
 
-                  <li class="hover:bg-[#3bb77e] hover:text-white transition-colors duration-500 ease-in-out rounded-lg p-2 w-24 text-center  text-base "><a href="about.html"  >About</a></li>
+                  <!-- about-menu -->
+                  <li class="menu-hover rounded-lg p-2 w-24 text-center  text-base "><a href="about.html"  >About</a></li>
 
-                  <li class="hover:bg-[#3bb77e] hover:text-white transition-colors duration-500 ease-in-out rounded-lg  p-2 w-24 text-center text-base "><a href="contact.html"  >Contact us</a></li>
+                  <!-- contact-menu -->
+                  <li class="menu-hover rounded-lg  p-2 w-24 text-center text-base "><a href="contact.html"  >Contact us</a></li>
 
                 </ul>
               </div>
@@ -300,8 +309,7 @@
                   <h1 class="text-7xl font-bold text-white mb-10">Farm-Fresh Organic Goods</h1>
                   <h3 class="text-4xl font-bold text-white mb-4">Sale up to <span class="text-green-400">30% OFF</span></h3>
                   <p class="text-lg text-white text-center mb-4">Get the juiciest and freshest fruits delivered to your home.</p>
-                  <button class="rounded-lg font-semibold px-4 py-2 gap-2 flex items-center bg-green-800 text-white group hover:px-6 duration-300">Shop Now <i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i>
-                  </button>
+                  <a href="shop.html">  <button class="rounded-lg font-semibold px-4 py-2 gap-2 flex items-center bg-green-800 text-white group hover:px-6 duration-300">Shop Now <i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i></button> </a>
               </div>
               <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                   <a href="#slide4" class="btn btn-circle">❮</a> 
@@ -317,7 +325,7 @@
                   <h1 class="text-7xl font-bold text-white mb-10">Healthy & Fresh</h1>
                   <h3 class="text-4xl font-bold text-white mb-4">Sale up to <span class="text-green-400">25% OFF</span></h3>
                   <p class="text-lg text-white text-center mb-4">Healthy and organic vegetables for a better lifestyle.</p>
-                  <a href="product.html" class="btn btn-primary rounded-lg font-semibold">Shop Now</a>
+                  <a href="shop.html">  <button class="rounded-lg font-semibold px-4 py-2 gap-2 flex items-center bg-green-800 text-white group hover:px-6 duration-300">Shop Now <i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i></button> </a>
               </div>
               <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                   <a href="#slide1" class="btn btn-circle">❮</a> 
@@ -333,7 +341,7 @@
                 <h1 class="text-7xl font-bold text-white mb-10">Fresh & Natural</h1>
                 <h3 class="text-4xl font-bold text-white mb-4">Sale up to <span class="text-green-400">20% OFF</span></h3>
                 <p class="text-lg text-white text-center mb-4">Fresh and pure dairy products for your daily needs.</p>
-                <a href="product.html" class="btn btn-primary rounded-lg font-semibold">Shop Now</a>
+                <a href="shop.html">  <button class="rounded-lg font-semibold px-4 py-2 gap-2 flex items-center bg-green-800 text-white group hover:px-6 duration-300">Shop Now <i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i></button> </a>
             </div>
             <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                 <a href="#slide2" class="btn btn-circle">❮</a> 
@@ -349,14 +357,14 @@
                 <h1 class="text-7xl font-bold text-white mb-10">Everything You Need</h1>
                 <h3 class="text-4xl font-bold text-white mb-4">Sale up to <span class="text-green-400">15% OFF</span></h3>
                 <p class="text-lg text-white text-center mb-4">Everything you need for your daily kitchen.</p>
-                <a href="product.html" class="btn btn-primary rounded-lg font-semibold">Shop Now</a>
+                <a href="shop.html">  <button class="rounded-lg font-semibold px-4 py-2 gap-2 flex items-center bg-green-800 text-white group hover:px-6 duration-300">Shop Now <i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i></button> </a>
             </div>
             <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                 <a href="#slide3" class="btn btn-circle">❮</a> 
                 <a href="#slide1" class="btn btn-circle">❯</a>
             </div>
         </div>
-    </div>
+      </div>
   </section>
 
   <!-- marque-section -->
@@ -376,71 +384,100 @@
   </section>
 
   <!-- category-section -->
-  <section class="container mx-auto my-12">
+  <section class="px-20 mx-auto my-12">
     <h2 class="text-4xl font-bold text-center mb-8">Our Categories</h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
         
-     <!-- ক্যাটাগরি ১: ফল -->
-      <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden group">
+      <!-- category 1 - fruits -->
+      <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 group">
 
-        <!-- ইমেজ -->
+        <!-- image -->
         <img src="assets/img/fruits-category/fruits.webp" alt="Fruits" class="w-10/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-125">
 
-        <!-- ট্রান্সপারেন্ট ব্ল্যাক ইফেক্ট এবং হেডিং -->
+        <!-- transparent-bg-effect & text -->
         <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 ease-in-out flex justify-center items-center">
-            <a href="product.html">
-                <h2 class="text-5xl font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">Fruits</h2>
-            </a>
+         <a href="product.html">
+          <h2 class="text-4xl font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">Fruits</h2>
+         </a>
         </div>
 
       </div>
 
-        <!-- ক্যাটাগরি ২: শাকসবজি -->
-        <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden group">
-            <img src="assets/img/fruits-category/vegetable.webp" alt="Vegetables" class="w-10/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-125">
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 ease-in-out flex justify-center items-center">
-            <a href="product.html"> 
-              <h2 class="text-4xl font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity 
-              duration-500 ease-in-out">Vegetables</h2>
-            </a> 
-            </div>
-        </div>
+     <!-- category 2 - vegetable -->
+      <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 group">
 
-        <!-- ক্যাটাগরি ৩: দুগ্ধজাত পণ্য -->
-        <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden group">
-            <img src="assets/img/fruits-category/dairy.webp" alt="Dairy" class="w-10/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 ease-in-out flex justify-center items-center">
-            <a href="product.html"> 
-              <h2 class="text-5xl font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">Dairy</h2>
-            </a> 
-            </div>
-        </div>
+        <!-- image-part -->
+         <img src="assets/img/fruits-category/vegetable.webp" alt="Vegetables" class="w-10/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-125">
 
-        <!-- ক্যাটাগরি ৪: মাংস -->
-        <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden group">
-            <img src="assets/img/fruits-category/meats.webp" alt="Meat" class="w-10/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-125">
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 ease-in-out flex justify-center items-center">
-            <a href="product.html"> 
-              <h2 class="text-5xl font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">Meat</h2>
-            </a> 
-            </div>
+        <!-- bg-transparent-part -->
+         <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 ease-in-out flex justify-center items-center">
+         <a href="product.html"> 
+          <h2 class="text-3xl font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">Vegetables</h2>
+         </a> 
         </div>
+      </div>
 
-        <!-- ক্যাটাগরি ৫: বেকারি -->
-        <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden group">
-            <img src="assets/img/fruits-category/bakery.webp" alt="Bakery" class="w-10/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-125">
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 ease-in-out flex justify-center items-center">
-            <a href="product.html"> 
-              <h2 class="text-5xl font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">Bakery</h2>
-            </a> 
-            </div>
+      <!-- category 3 - dairy -->
+      <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 group">
+        
+        <!-- image-part -->
+        <img src="assets/img/fruits-category/dairy.webp" alt="Dairy" class="w-8/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+
+        <!-- bg-transparent-part -->
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 ease-in-out flex justify-center items-center">
+        <a href="product.html"> 
+         <h2 class="text-4xl font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">Dairy</h2>
+         </a> 
         </div>
+      </div>
+
+      <!-- category 4 - fish -->
+      <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 group">
+        
+        <!-- image-part -->
+        <img src="assets/img/fruits-category/fish.webp" alt="fish" class="w-8/12 object-contain transition-transform duration-700 ease-in-out group-hover:scale-110">
+
+        <!-- bg-transparent-part -->
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 ease-in-out flex justify-center items-center">
+        <a href="product.html"> 
+         <h2 class="text-4xl font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">Fish</h2>
+         </a> 
+        </div>
+      </div>
+
+      <!-- category 5 - meats-->
+      <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 group">
+
+        <!-- image-part -->
+        <img src="assets/img/fruits-category/meats.webp" alt="Meat" class="w-10/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-125">
+
+        <!-- bg-transparent-part -->
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 ease-in-out flex justify-center items-center">
+        <a href="product.html"> 
+          <h2 class="text-4xl font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">Meat</h2>
+        </a> 
+       </div>
+      </div>
+
+      <!-- category 6 - bakery -->
+      <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 group">
+
+        <!-- image-part -->
+        <img src="assets/img/fruits-category/bakery.webp" alt="Bakery" class="w-10/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-125">
+
+        <!-- bg-transparent-part -->
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 ease-in-out flex justify-center items-center">
+        <a href="product.html"> 
+         <h2 class="text-4xl font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">Bakery</h2>
+        </a> 
+       </div>
+      </div>
     </div>
   </section>
 
   <!-- Products -->
-  <section class="container mx-auto my-12 p-4">
+  <section class="px-20 mx-auto my-12">
 
     <h3 class="text-2xl font-semibold text-center mb-2 text-color">Latest Arrivals</h3>
     <h1 class="text-5xl font-bold text-center mb-8 tracking-widest">NEW PRODUCTS</h1>
@@ -713,6 +750,17 @@
     </div>
 
     </div>
+  </section>
+
+  <!-- discount-banner -->
+  <section class="mx-20 my-12 flex justify-end discount-banner rounded-2xl ">
+
+    <div class="flex flex-col items-center justify-center gap-6 bg-black bg-opacity-55 p-8 m-12 rounded-2xl text-center w-1/2">
+      <h1 class="text-5xl font-bold leading-tight text-white">Dairy & Bakery <br> Fresh Products</h1>
+      <h3 class="text-2xl font-bold text-white">30% OFF <span class="text-green-400 font-normal">Hurry up!!!</span></h3>
+      <a href="shop.html">  <button class="rounded-lg font-semibold px-4 py-2 gap-2 flex items-center bg-green-800 text-white group hover:px-6 duration-300">Shop Now <i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i></button> </a>
+  </div>
+
   </section>
 
   <!-- newsletter-section -->
