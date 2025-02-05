@@ -4,29 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grocery E-commerce</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.0/dist/full.css" rel="stylesheet">
-
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Tailwind & daisyUI -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
   
+    <!-- google-font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
   
+    <!-- boxicons & font-awesome icon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
     <style type="text/tailwindcss">
 
-        .navbar {
-          height: 60px; 
-        }
-           
-        .hero {
-          height: calc(100vh - 128px);
-        }
-      
         .bg-primary {
           background-color: #3BB77E;
           color: white;
@@ -54,6 +47,11 @@
           border: none;
           color: white;
         }
+
+        .cart-bg {
+          background-color: #F1F1F1;
+        }
+
 
         .menu-hover {
           @apply hover:bg-[#3BB77E] hover:text-white transition-colors duration-200 ease-in-out cursor-pointer
@@ -115,7 +113,7 @@
 
 <body>
    <!-- navbar -->
-   <header id="home">
+   <header id="home" class="flex flex-col">
 
       <!-- navbar-1 -->
       <nav class="py-3 border-b">
@@ -299,79 +297,76 @@
               </div>
           </div>
       </nav>
+
     
    </header>
 
 
   <!-- hero-section -->
-  <section class="hero">
-      <!-- DaisyUI Carousel -->
-      <div class="carousel w-full h-full">
-          <!-- Slide 1 -->
-          <div id="slide1" class="carousel-item relative w-full">
-              <img src="assets/img/hero-bg/hero-bg-1.webp" class="w-full h-full object-cover object-top" alt="Fruits" />
-              <div class="absolute flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-65">
-                  <h2 class="text-4xl font-bold text-white mb-4 capitalize">Welcome to Grocery Store</h2>
-                  <h1 class="text-7xl font-bold text-white mb-10">Farm-Fresh Organic Goods</h1>
-                  <h3 class="text-4xl font-bold text-white mb-4">Sale up to <span class="text-green-400">30% OFF</span></h3>
-                  <p class="text-lg text-white text-center mb-4">Get the juiciest and freshest fruits delivered to your home.</p>
-                  <a href="shop.html">  <button class="rounded-lg font-semibold px-4 py-2 gap-2 flex items-center bg-green-800 text-white group hover:px-6 duration-300">Shop Now <i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i></button> </a>
-              </div>
-              <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                  <a href="#slide4" class="btn btn-circle">❮</a> 
-                  <a href="#slide2" class="btn btn-circle">❯</a>
-              </div>
-          </div>
+  <section class="hero relative overflow-hidden h-[calc(100vh-128px)]">
 
-          <!-- Slide 2 -->
-          <div id="slide2" class="carousel-item relative w-full">
-              <img src="assets/img/hero-bg/hero-bg-2.webp" class="w-full h-full object-cover object-top" alt="Vegetables" />
+    <div class="w-full h-full flex overflow-hidden relative">
+
+        <!-- DaisyUI Carousel -->
+        <div id="carousel" class="w-[500%] flex transition-transform duration-[2s] ease-in-out">
+
+        <!-- Slide 1 -->
+        <div id="slide1" class="carousel-item relative w-full h-full flex-shrink-0">
+                <img src="assets/img/hero-bg/hero-bg-1.webp" class="w-full h-full object-cover object-top" alt="Fruits" />
+                <div class="absolute flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-65">
+                    <h2 class="text-4xl font-bold text-white mb-4 capitalize">Welcome to Grocery Store</h2>
+                    <h1 class="text-7xl font-bold text-white mb-10">Farm-Fresh Organic Goods</h1>
+                    <h3 class="text-4xl font-bold text-white mb-4">Sale up to <span class="text-green-400">30% OFF</span></h3>
+                    <p class="text-lg text-white text-center mb-4">Get the juiciest and freshest fruits delivered to your home.</p>
+                    <a href="shop.html">  <button class="rounded-lg font-semibold px-4 py-2 gap-2 flex items-center bg-green-800 text-white group hover:px-6 duration-300">Shop Now <i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i></button> </a>
+                </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div id="slide2" class="carousel-item relative w-full h-full flex-shrink-0">
+                <img src="assets/img/hero-bg/hero-bg-2.webp" class="w-full h-full object-cover object-top" alt="Vegetables" />
+                <div class="absolute flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-60">
+                    <h2 class="text-4xl font-bold text-white mb-4 capitalize">Organic Vegetables</h2>
+                    <h1 class="text-7xl font-bold text-white mb-10">Healthy & Fresh</h1>
+                    <h3 class="text-4xl font-bold text-white mb-4">Sale up to <span class="text-green-400">25% OFF</span></h3>
+                    <p class="text-lg text-white text-center mb-4">Healthy and organic vegetables for a better lifestyle.</p>
+                    <a href="shop.html">  <button class="rounded-lg font-semibold px-4 py-2 gap-2 flex items-center bg-green-800 text-white group hover:px-6 duration-300">Shop Now <i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i></button> </a>
+                </div>
+        </div>
+            
+        <!-- Slide 3 -->
+        <div id="slide3" class="carousel-item relative w-full h-full flex-shrink-0">
+              <img src="assets/img/hero-bg/hero-bg-3.webp" class="w-full h-full object-cover object-top" alt="Dairy" />
               <div class="absolute flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-60">
-                  <h2 class="text-4xl font-bold text-white mb-4 capitalize">Organic Vegetables</h2>
-                  <h1 class="text-7xl font-bold text-white mb-10">Healthy & Fresh</h1>
-                  <h3 class="text-4xl font-bold text-white mb-4">Sale up to <span class="text-green-400">25% OFF</span></h3>
-                  <p class="text-lg text-white text-center mb-4">Healthy and organic vegetables for a better lifestyle.</p>
+                  <h2 class="text-4xl font-bold text-white mb-4 capitalize">Pure Dairy Products</h2>
+                  <h1 class="text-7xl font-bold text-white mb-10">Fresh & Natural</h1>
+                  <h3 class="text-4xl font-bold text-white mb-4">Sale up to <span class="text-green-400">20% OFF</span></h3>
+                  <p class="text-lg text-white text-center mb-4">Fresh and pure dairy products for your daily needs.</p>
                   <a href="shop.html">  <button class="rounded-lg font-semibold px-4 py-2 gap-2 flex items-center bg-green-800 text-white group hover:px-6 duration-300">Shop Now <i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i></button> </a>
               </div>
-              <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                  <a href="#slide1" class="btn btn-circle">❮</a> 
-                  <a href="#slide3" class="btn btn-circle">❯</a>
-              </div>
-          </div>
-          
-          <!-- Slide 3 -->
-          <div id="slide3" class="carousel-item relative w-full">
-            <img src="assets/img/hero-bg/hero-bg-3.webp" class="w-full h-full object-cover object-top" alt="Dairy" />
-            <div class="absolute flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-60">
-                <h2 class="text-4xl font-bold text-white mb-4 capitalize">Pure Dairy Products</h2>
-                <h1 class="text-7xl font-bold text-white mb-10">Fresh & Natural</h1>
-                <h3 class="text-4xl font-bold text-white mb-4">Sale up to <span class="text-green-400">20% OFF</span></h3>
-                <p class="text-lg text-white text-center mb-4">Fresh and pure dairy products for your daily needs.</p>
-                <a href="shop.html">  <button class="rounded-lg font-semibold px-4 py-2 gap-2 flex items-center bg-green-800 text-white group hover:px-6 duration-300">Shop Now <i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i></button> </a>
-            </div>
-            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                <a href="#slide2" class="btn btn-circle">❮</a> 
-                <a href="#slide4" class="btn btn-circle">❯</a>
-            </div>
         </div>
 
         <!-- Slide 4 -->
-        <div id="slide4" class="carousel-item relative w-full">
-            <img src="assets/img/hero-bg/hero-bg-4.webp" class="w-full h-full object-cover object-top" alt="Groceries" />
-            <div class="absolute flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-60">
-                <h2 class="text-4xl font-bold text-white mb-4 capitalize">Daily Groceries</h2>
-                <h1 class="text-7xl font-bold text-white mb-10">Everything You Need</h1>
-                <h3 class="text-4xl font-bold text-white mb-4">Sale up to <span class="text-green-400">15% OFF</span></h3>
-                <p class="text-lg text-white text-center mb-4">Everything you need for your daily kitchen.</p>
-                <a href="shop.html">  <button class="rounded-lg font-semibold px-4 py-2 gap-2 flex items-center bg-green-800 text-white group hover:px-6 duration-300">Shop Now <i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i></button> </a>
-            </div>
-            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                <a href="#slide3" class="btn btn-circle">❮</a> 
-                <a href="#slide1" class="btn btn-circle">❯</a>
-            </div>
+        <div id="slide4" class="carousel-item relative w-full h-full flex-shrink-0">
+                <img src="assets/img/hero-bg/hero-bg-4.webp" class="w-full h-full object-cover object-top" alt="Groceries" />
+                <div class="absolute flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-60">
+                    <h2 class="text-4xl font-bold text-white mb-4 capitalize">Daily Groceries</h2>
+                    <h1 class="text-7xl font-bold text-white mb-10">Everything You Need</h1>
+                    <h3 class="text-4xl font-bold text-white mb-4">Sale up to <span class="text-green-400">15% OFF</span></h3>
+                    <p class="text-lg text-white text-center mb-4">Everything you need for your daily kitchen.</p>
+                    <a href="shop.html">  <button class="rounded-lg font-semibold px-4 py-2 gap-2 flex items-center bg-green-800 text-white group hover:px-6 duration-300">Shop Now <i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i></button> </a>
+                </div>
         </div>
-      </div>
-  </section>
+
+        </div>
+
+        <div class="slide-btn absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#next" class="btn btn-circle">❮</a> 
+            <a href="#previous" class="btn btn-circle">❯</a>
+        </div>
+    </div>
+
+  </section>  
 
   <!-- marque-section -->
   <section class="marquee-container overflow-hidden bg-primary-color">
@@ -497,24 +492,46 @@
     </div>
 
     <!-- Product-Card-Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+    <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
     <!-- Cart-1 -->
-    <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">
-      <figure class="overflow-hidden flex items-center justify-center h-[65%]">
-        <img src="assets/img/cart/fruit/strawberries.webp" alt="strawberries" class=" w-32 h-32 object-contain group-hover:scale-110 transition-transform duration-500">
+    <div class="card flex flex-col justify-center items-center p-4 rounded-md border relative group cursor-pointer h-96">
+    
+      <!-- Image -->
+      <figure class="overflow-hidden flex items-center justify-center h-3/5">
+          <img src="assets/img/cart/fruit/strawberries.webp" alt="strawberries" class="w-5/6 object-contain group-hover:scale-110 transition-transform duration-500">
       </figure>
-      <div class="card-body h-1/4 text-center py-2">
-       <h3 class="text-xl text-center font-bold capitalize">strawberries</h3>
-       <p class="text-base font-bold">$30.00 <span class="text-sm line-through text-gray-500">$23.00</span></p>
+  
+      <!-- Text -->
+      <div class="card-body w-full px-2 gap-1 items-center text-center py-2">
+          <p class="text-color">Fruits</p>
+          <h3 class="text-base text-center font-semibold capitalize">Strawberries</h3>
+          
+  
+          <!-- Quantity Control -->
+          <div class="flex items-center justify-between gap-2 mt-2">
+            
+            <!-- Price -->
+            <div> 
+              <p class="text-base font-bold ">
+                <span id="total-price">$30.00</span> 
+                <span class="text-sm line-through text-gray-500">$23.00</span>
+              </p>
+            </div>
+
+            <div class="flex flex-row items-center justify-center gap-4 border rounded-full p-2">
+              <button id="decrease" class="bg-gray-200 flex flex-col items-center justify-center rounded-full w-6 h-6 text-lg">−</button>
+              <span id="quantity" class="text-lg font-semibold">1</span>
+              <button id="increase" class="bg-gray-200 flex flex-col items-center justify-center rounded-full w-6 h-6 text-lg">+</button>
+            </div>
+          </div>
+  
+          <!-- Add to Cart Button -->
+          <button id="add-to-cart" class="rounded-lg font-semibold px-2 py-1 gap-2 flex items-center text-center btn-bg-primary text-white group hover:px-4 duration-300">Add to Cart<i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i></button>
       </div>
-      <!-- Hover-BG-Transparent-Effect -->
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
-      <a href="" class=""><i class='bx bx-search text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
-      <a href="cart.html"> <i class='bx bx-cart-alt text-white text-5xl hover:scale-125 transition-transform duration-500'></i> 
-      </a>
-     </div> 
-    </div>
+
+      </div>
+  
         
     <!-- Cart-2 -->
     <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">
@@ -773,13 +790,13 @@
   <section class="mx-20 my-20 rounded-2xl scroll-mt-16">
 
      <!-- product-main-div-content -->
-     <div class="flex flex-col lg:flex-row justify-around items-center gap-4 h-80">
+     <div class="flex flex-col lg:flex-row justify-around items-center gap-4 lg:h-80">
 
       <!-- product-card-left -->
-      <div class="w-[30%] category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden group">
+      <div class="lg:w-[30%] category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden group">
 
         <!-- image -->
-        <img src="assets/img/cart/dairy/chocolate/chocolate-gift.webp" alt="Fruits" class="w-full h-full p-4 object-contain transition-transform duration-700 ease-in-out group-hover:scale-125">
+        <img src="assets/img/cart/dairy/chocolate/chocolate-gift.webp" alt="Fruits" class="lg:w-full lg:h-full p-4 object-contain transition-transform duration-700 ease-in-out group-hover:scale-125">
 
         <!-- transparent-bg-effect & text -->
         <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end items-center p-2 gap-3 rounded-xl top-40 hover:top-0 transition-all duration-500">
@@ -791,7 +808,7 @@
       </div>
 
       <!-- product-card-right -->
-      <div class="w-[75%] grid md:grid-cols-3 gap-2" >
+      <div class="lg:w-[75%] grid md:grid-cols-3 gap-2" >
 
         <!-- part-1 -->
         <div class="grid gap-2"> 
@@ -951,6 +968,190 @@
     </div>
 
   </section>
+
+
+  <!-- discover items -->
+  <section class="mx-20 my-20 rounded-2xl scroll-mt-16">
+
+    <!-- product-main-div-content -->
+    <div class="flex flex-col lg:flex-row justify-around items-center gap-4 lg:h-80">
+
+     <!-- product-card-left -->
+     <div class="lg:w-[30%] category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden group">
+
+       <!-- image -->
+       <img src="assets/img/cart/dairy/chocolate/chocolate-gift.webp" alt="Fruits" class="lg:w-full lg:h-full p-4 object-contain transition-transform duration-700 ease-in-out group-hover:scale-125">
+
+       <!-- transparent-bg-effect & text -->
+       <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end items-center p-2 gap-3 rounded-xl top-40 hover:top-0 transition-all duration-500">
+         <h3 class="text-xl font-bold text-white">Buy 2 Get1 <span class="text-green-400" >OFFER</span> </h3>
+         <h1 class="text-xl font-bold leading-tight text-white">Ready to Grab Chocolate</h1>
+         <a href="shop.html">  <button class="rounded-lg font-semibold p-2 gap-1 flex items-center btn-bg-primary group hover:px-4 duration-300">Shop Now <i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i></button> </a>
+       </div>
+
+     </div>
+
+     <!-- product-card-right -->
+     <div class="lg:w-[75%] grid md:grid-cols-3 gap-2" >
+
+       <!-- part-1 -->
+       <div class="grid gap-2"> 
+         <h1 class="text-2xl font-semibold mb-2">New <span class="text-color">Arrivals</span></h1>
+
+         <!-- cart-1 -->
+         <div class="flex justify-start items-center gap-4 lg:gap-2 rounded-lg p-2 bg-white cursor-pointer border ">
+
+         <img src="assets/img/cart/dairy/ice-cream/Mixed-Cop.webp" alt="services-img" class=" p-2 rounded-lg w-20 h-20 object-contain bg-gray-200 ">
+
+         <div class="flex flex-col flex-1 justify-center items-start gap-1 text-xs" >
+           <h3 class=" text-base font-semibold">Ice Cream-COP</h3>
+           <a href="shop.html"><span class="text-gray-500 text-sm" >Dairy</span></a>
+           <p class=" text-base font-bold text-color">$5.99</p>
+         </div>
+
+         <a class="btn bg-white border-none outline-none  p-3"><img src="assets/icon/cart.png" alt="" class="w-6" ></a>
+
+         </div>
+
+         <!-- cart-2 -->
+         <div class="flex justify-start items-center gap-4 lg:gap-2 rounded-lg p-2 bg-white cursor-pointer border ">
+
+         <img src="assets/img/cart/dairy/ice-cream/Strawberry ice cream.webp" alt="services-img" class=" p-2 rounded-lg w-20 h-20 object-contain bg-gray-200 ">
+
+         <div class="flex flex-col flex-1 justify-center items-start gap-1 text-xs" >
+           <h3 class=" text-base font-semibold">Cup Strawberry Cream </h3>
+           <a href="shop.html"><span class="text-gray-500 text-sm" >Dairy</span></a>
+           <p class=" text-base font-bold text-color">$5.99</p>
+         </div>
+
+         <a class="btn bg-white border-none outline-none  p-3"><img src="assets/icon/cart.png" alt="" class="w-6" ></a>
+
+         </div>
+
+         <!-- cart-3 -->
+         <div class="flex justify-start items-center gap-4 lg:gap-2 rounded-lg p-2 bg-white cursor-pointer border ">
+
+           <img src="assets/img/cart/dairy/ice-cream/sugar-coated cones.webp" alt="services-img" class=" p-2 rounded-lg w-20 h-20 object-contain bg-gray-200 ">
+   
+           <div class="flex flex-col flex-1 justify-center items-start gap-1 text-xs" >
+             <h3 class=" text-base font-semibold">Ice Cream Cone</h3>
+             <a href="shop.html"><span class="text-gray-500 text-sm" >Dairy</span></a>
+             <p class=" text-base font-bold text-color">$5.99</p>
+           </div>
+   
+           <a class="btn bg-white border-none outline-none  p-3"><img src="assets/icon/cart.png" alt="" class="w-6" ></a>
+   
+         </div>
+
+       </div>
+
+       <!-- part-2 -->
+       <div class="grid gap-2"> 
+         <h1 class="text-2xl font-semibold mb-2">Top <span class="text-color">Selling</span></h1>
+
+           <!-- cart-1 -->
+           <div class="flex justify-start items-center gap-4 lg:gap-2 rounded-lg p-2 bg-white cursor-pointer border ">
+
+           <img src="assets/img/cart/dairy/chocolate/Ferrero Rocher.webp" alt="product-img" class=" p-2 rounded-lg w-20 h-20 object-contain bg-gray-200 ">
+ 
+           <div class="flex flex-col flex-1 justify-center items-start gap-1 text-xs" >
+             <h3 class=" text-base font-semibold">Ferrero Rocher</h3>
+             <a href="shop.html"><span class="text-gray-500 text-sm" >Dairy</span></a>
+             <p class=" text-base font-bold text-color">$2.99</p>
+           </div>
+ 
+           <a class="btn bg-white border-none outline-none  p-3"><img src="assets/icon/cart.png" alt="" class="w-6" ></a>
+ 
+           </div>
+ 
+           <!-- cart-2 -->
+           <div class="flex justify-start items-center gap-4 lg:gap-2 rounded-lg p-2 bg-white cursor-pointer border ">
+
+             <img src="assets/img/cart/dairy/chocolate/caramel.webp" alt="product-img" class=" p-2 rounded-lg w-20 h-20 object-contain bg-gray-200 ">
+   
+             <div class="flex flex-col flex-1 justify-center items-start gap-1 text-xs" >
+               <h3 class=" text-base font-semibold">Caramel</h3>
+               <a href="shop.html"><span class="text-gray-500 text-sm" >Dairy</span></a>
+               <p class=" text-base font-bold text-color">$2.99</p>
+             </div>
+   
+             <a class="btn bg-white border-none outline-none  p-3"><img src="assets/icon/cart.png" alt="" class="w-6" ></a>
+   
+           </div>
+ 
+           <!-- cart-3 -->
+           <div class="flex justify-start items-center gap-4 lg:gap-2 rounded-lg p-2 bg-white cursor-pointer border ">
+
+             <img src="assets/img/cart/dairy/chocolate/ktms.webp" alt="product-img" class=" p-2 rounded-lg w-20 h-20 object-contain bg-gray-200 ">
+   
+             <div class="flex flex-col flex-1 justify-center items-start gap-1 text-xs" >
+               <h3 class=" text-base font-semibold">Mixed Choco</h3>
+               <a href="shop.html"><span class="text-gray-500 text-sm" >Dairy</span></a>
+               <p class=" text-base font-bold text-color">$2.99</p>
+             </div>
+   
+             <a class="btn bg-white border-none outline-none  p-3"><img src="assets/icon/cart.png" alt="" class="w-6" ></a>
+   
+           </div>
+
+       </div>
+
+       <!-- part-3 -->
+       <div class="grid gap-2"> 
+         <h1 class="text-2xl font-semibold mb-2">Trending <span class="text-color">Items</span></h1>
+
+         <!-- cart-1 -->
+         <div class="flex justify-start items-center gap-4 lg:gap-2 rounded-lg p-2 bg-white cursor-pointer border ">
+
+           <img src="assets/img/cart/dairy/cake/Torta Cupcake Bakery Custard Sponge cake.webp" alt="product-img" class=" p-2 rounded-lg w-20 h-20 object-contain bg-gray-200 ">
+ 
+           <div class="flex flex-col flex-1 justify-center items-start gap-1 text-xs" >
+             <h3 class=" text-base font-semibold">Sponge Cake</h3>
+             <a href="shop.html"><span class="text-gray-500 text-sm" >Dairy</span></a>
+             <p class=" text-base font-bold text-color">$7.99</p>
+           </div>
+ 
+           <a class="btn bg-white border-none outline-none  p-3"><img src="assets/icon/cart.png" alt="" class="w-6" ></a>
+ 
+           </div>
+ 
+         <!-- cart-2 -->
+         <div class="flex justify-start items-center gap-4 lg:gap-2 rounded-lg p-2 bg-white cursor-pointer border ">
+
+             <img src="assets/img/cart/dairy/cake/Strawberry cream cake Black Forest gateau.webp" alt="product-img" class=" p-2 rounded-lg w-20 h-20 object-contain bg-gray-200 ">
+   
+             <div class="flex flex-col flex-1 justify-center items-start gap-1 text-xs" >
+               <h3 class=" text-base font-semibold">Strawberry Cake</h3>
+               <a href="shop.html"><span class="text-gray-500 text-sm" >Dairy</span></a>
+               <p class=" text-base font-bold text-color">$9.99</p>
+             </div>
+   
+             <a class="btn bg-white border-none outline-none  p-3"><img src="assets/icon/cart.png" alt="" class="w-6" ></a>
+   
+         </div>
+ 
+         <!-- cart-3 -->
+         <div class="flex justify-start items-center gap-4 lg:gap-2 rounded-lg p-2 bg-white cursor-pointer border ">
+
+             <img src="assets/img/cart/dairy/cake/Chocolate cake.webp" alt="product-img" class=" p-2 rounded-lg w-20 h-20 object-contain bg-gray-200 ">
+   
+             <div class="flex flex-col flex-1 justify-center items-start gap-1 text-xs" >
+               <h3 class=" text-base font-semibold">Chocolate cake</h3>
+               <a href="shop.html"><span class="text-gray-500 text-sm" >Dairy</span></a>
+               <p class=" text-base font-bold text-color">$11.99</p>
+             </div>
+   
+             <a class="btn bg-white border-none outline-none  p-3"><img src="assets/icon/cart.png" alt="" class="w-6" ></a>
+   
+         </div>   
+
+       </div>
+
+     </div> 
+       
+   </div>
+
+ </section>
       
 
   <!-- newsletter-section -->
@@ -1029,6 +1230,6 @@
   </footer>
 
 
-
+  <script type="text/JavaScript" src="script.js"></script>
 </body>
 </html>
