@@ -9,16 +9,20 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
   
-    <!-- google-font -->
+    <!-- google-font -  font-family: "Baloo Da 2", serif; -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&display=swap" rel="stylesheet">
   
     <!-- boxicons & font-awesome icon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
     <style type="text/tailwindcss">
+
+        .bangla-font{
+          font-family: "Baloo Da 2", serif;
+        }
 
         .bg-primary {
           background-color: #3BB77E;
@@ -391,7 +395,7 @@
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
         
       <!-- category 1 - fruits -->
-      <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 group">
+      <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 h-40  group">
 
         <!-- image -->
         <img src="assets/img/fruits-category/fruits.webp" alt="Fruits" class="w-10/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-125">
@@ -406,7 +410,7 @@
       </div>
 
      <!-- category 2 - vegetable -->
-      <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 group">
+      <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 h-40 group">
 
         <!-- image-part -->
          <img src="assets/img/fruits-category/vegetable.webp" alt="Vegetables" class="w-10/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-125">
@@ -420,10 +424,10 @@
       </div>
 
       <!-- category 3 - dairy -->
-      <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 group">
+      <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 h-40 group">
         
         <!-- image-part -->
-        <img src="assets/img/fruits-category/dairy.webp" alt="Dairy" class="w-8/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+        <img src="assets/img/fruits-category/dairy.webp" alt="Dairy" class="w-8/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-125">
 
         <!-- bg-transparent-part -->
         <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 ease-in-out flex justify-center items-center">
@@ -434,10 +438,10 @@
       </div>
 
       <!-- category 4 - fish -->
-      <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 group">
+      <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 h-40 group">
         
         <!-- image-part -->
-        <img src="assets/img/fruits-category/fish.webp" alt="fish" class="w-8/12 object-contain transition-transform duration-700 ease-in-out group-hover:scale-110">
+        <img src="assets/img/fruits-category/fish.webp" alt="fish" class="w-8/12 object-contain transition-transform duration-700 ease-in-out group-hover:scale-125">
 
         <!-- bg-transparent-part -->
         <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 ease-in-out flex justify-center items-center">
@@ -448,7 +452,7 @@
       </div>
 
       <!-- category 5 - meats-->
-      <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 group">
+      <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 h-40 group">
 
         <!-- image-part -->
         <img src="assets/img/fruits-category/meats.webp" alt="Meat" class="w-10/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-125">
@@ -478,7 +482,7 @@
   </section>
 
   <!-- Products -->
-  <section class="px-20 mx-auto my-12">
+  <section class="px-32 mx-auto my-12">
 
     <h3 class="text-2xl font-semibold text-center mb-2 text-color">Latest Arrivals</h3>
     <h1 class="text-5xl font-bold text-center mb-8 tracking-widest">NEW PRODUCTS</h1>
@@ -495,112 +499,249 @@
     <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
     <!-- Cart-1 -->
-    <div class="card flex flex-col justify-center items-center p-4 rounded-md border relative group cursor-pointer h-96">
+    <div class="card flex flex-col justify-center items-center p-4 rounded-md border relative group h-96" data-unit="kg">
     
       <!-- Image -->
-      <figure class="overflow-hidden flex items-center justify-center h-3/5">
-          <img src="assets/img/cart/fruit/strawberries.webp" alt="strawberries" class="w-5/6 object-contain group-hover:scale-110 transition-transform duration-500">
+      <figure class="overflow-hidden flex items-center justify-center group h-3/5">
+        <img src="assets/img/cart/fruit/strawberries.webp" alt="strawberries" class="w-5/6 object-contain group-hover:scale-110 transition-transform duration-500">
+        <div class="absolute inset-0 rounded-md bg-black bg-opacity-0 group-hover:bg-opacity-50 bottom-96 group-hover:bottom-48 transition-all duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
+          <a href="" class=""><i class='bx bx-zoom-in text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
+          <a href="cart.html"> <i class='bx bx-heart text-white text-5xl hover:scale-125 transition-transform duration-500'></i></a> 
+        </div> 
       </figure>
   
       <!-- Text -->
-      <div class="card-body w-full px-2 gap-1 items-center text-center py-2">
-          <p class="text-color">Fruits</p>
-          <h3 class="text-base text-center font-semibold capitalize">Strawberries</h3>
+      <div class="card-body w-full px-2 py-2 mt-4 gap-0 justify-center ">
+
+          <!-- cat. & name -->
+          <div class="capitalize">
+           <p class="text-color text-left font-semibold ">Fruits</p>
+           <h3 class="text-base text-left font-bold uppercase ">Strawberry local</h3>
+           <p class="text-base font-semibold text-gray-500">kg</p>
+
+          </div>
           
   
           <!-- Quantity Control -->
-          <div class="flex items-center justify-between gap-2 mt-2">
+          <div class="flex items-center justify-between my-2">
             
             <!-- Price -->
             <div> 
-              <p class="text-base font-bold ">
-                <span id="total-price">$30.00</span> 
-                <span class="text-sm line-through text-gray-500">$23.00</span>
-              </p>
+              <p id="total-price" class="font-semibold uppercase">tk.1990</p>
             </div>
 
-            <div class="flex flex-row items-center justify-center gap-4 border rounded-full p-2">
+            <div class="flex flex-row items-center justify-center gap-4 border rounded-full p-1">
               <button id="decrease" class="bg-gray-200 flex flex-col items-center justify-center rounded-full w-6 h-6 text-lg">−</button>
-              <span id="quantity" class="text-lg font-semibold">1</span>
+              <span id="quantity" class="text-sm font-semibold">1</span>
               <button id="increase" class="bg-gray-200 flex flex-col items-center justify-center rounded-full w-6 h-6 text-lg">+</button>
             </div>
           </div>
   
           <!-- Add to Cart Button -->
-          <button id="add-to-cart" class="rounded-lg font-semibold px-2 py-1 gap-2 flex items-center text-center btn-bg-primary text-white group hover:px-4 duration-300">Add to Cart<i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i></button>
+          <div class="flex justify-center">
+           <button id="add-to-cart" class="rounded-lg font-semibold px-2 py-1 gap-2 flex items-center justify-center btn-bg-primary text-white group hover:px-4 duration-300">Add to Cart<i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i></button>
+          </div>
       </div>
 
-      </div>
+    </div> 
   
-        
     <!-- Cart-2 -->
-    <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">
-      <figure class="overflow-hidden flex items-center justify-center h-[65%]">
-        <img src="assets/img/cart/vegetable/cucumbers.webp" alt="cucumbers" class=" w-32 h-32 object-contain group-hover:scale-110 transition-transform duration-500">
+    <div class="card flex flex-col justify-center items-center p-4 rounded-md border relative group h-96" data-unit="kg">
+    
+      <!-- Image -->
+      <figure class="overflow-hidden flex items-center justify-center group h-3/5">
+        <img src="assets/img/cart/vegetable/cucumbers.webp" alt="cucumbers" class="w-5/6 object-contain group-hover:scale-110 transition-transform duration-500">
+        <div class="absolute inset-0 rounded-md bg-black bg-opacity-0 group-hover:bg-opacity-50 bottom-96 group-hover:bottom-48 transition-all duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
+          <a href="" class=""><i class='bx bx-zoom-in text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
+          <a href="cart.html"> <i class='bx bx-heart text-white text-5xl hover:scale-125 transition-transform duration-500'></i></a> 
+        </div> 
       </figure>
-      <div class="card-body h-1/4 text-center py-2">
-       <h3 class="text-xl text-center font-bold capitalize">cucumbers</h3>
-       <p class="text-base font-bold">$30.00 <span class="text-sm line-through text-gray-500">$23.00</span></p>
-      </div>
-      <!-- Hover-BG-Transparent-Effect -->
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
-      <a href="" class=""><i class='bx bx-search text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
-      <a href="cart.html"> <i class='bx bx-cart-alt text-white text-5xl hover:scale-125 transition-transform duration-500'></i> 
-      </a>
-     </div> 
-    </div>
+  
+      <!-- Text -->
+      <div class="card-body w-full px-2 py-2 mt-4 gap-0 justify-center ">
 
-    <!-- Cart-3 -->
-    <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">
-      <figure class="overflow-hidden flex items-center justify-center h-[65%]">
-        <img src="assets/img/cart/vegetable/sweet peppers.webp" alt="sweet peppers" class=" w-32 h-32 object-contain group-hover:scale-110 transition-transform duration-500">
-      </figure>
-      <div class="card-body h-1/4 text-center py-2">
-       <h3 class="text-xl text-center font-bold capitalize">sweet peppers</h3>
-       <p class="text-base font-bold">$30.00 <span class="text-sm line-through text-gray-500">$23.00</span></p>
+          <!-- cat. & name -->
+          <div class="capitalize">
+           <p class="text-color text-left font-semibold ">Vegetable</p>
+           <h3 class="text-base text-left font-bold uppercase ">cucumbers <span class="bangla-font text-lg">(শসা )</span></h3>
+           <p class="text-base font-semibold text-gray-500">kg</p>
+
+          </div>
+          
+  
+          <!-- Quantity Control -->
+          <div class="flex items-center justify-between my-2">
+            
+            <!-- Price -->
+            <div> 
+              <p class="uppercase">
+                <span id="total-price" class="font-semibold">tk.70</span> 
+              </p>
+            </div>
+
+            <div class="flex flex-row items-center justify-center gap-4 border rounded-full p-1">
+              <button id="decrease" class="bg-gray-200 flex flex-col items-center justify-center rounded-full w-6 h-6 text-lg">−</button>
+              <span id="quantity" class="text-sm font-semibold">1</span>
+              <button id="increase" class="bg-gray-200 flex flex-col items-center justify-center rounded-full w-6 h-6 text-lg">+</button>
+            </div>
+          </div>
+  
+          <!-- Add to Cart Button -->
+          <div class="flex justify-center">
+           <button id="add-to-cart" class="rounded-lg font-semibold px-2 py-1 gap-2 flex items-center justify-center btn-bg-primary text-white group hover:px-4 duration-300">Add to Cart<i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i></button>
+          </div>
       </div>
-      <!-- Hover-BG-Transparent-Effect -->
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
-      <a href="" class=""><i class='bx bx-search text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
-      <a href="cart.html"> <i class='bx bx-cart-alt text-white text-5xl hover:scale-125 transition-transform duration-500'></i> 
-      </a>
-     </div> 
+
+    </div>
+    
+    <!-- Cart-3 -->
+    <div class="card flex flex-col justify-center items-center p-4 rounded-md border relative group h-96" data-unit="kg">
+    
+      <!-- Image -->
+      <figure class="overflow-hidden flex items-center justify-center group h-3/5">
+        <img src="assets/img/cart/vegetable/capsicum-chilli.jpg" alt="capsicum-chilli" class="w-5/6 object-contain group-hover:scale-110 transition-transform duration-500">
+        <div class="absolute inset-0 rounded-md bg-black bg-opacity-0 group-hover:bg-opacity-50 bottom-96 group-hover:bottom-48 transition-all duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
+          <a href="" class=""><i class='bx bx-zoom-in text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
+          <a href="cart.html"> <i class='bx bx-heart text-white text-5xl hover:scale-125 transition-transform duration-500'></i></a> 
+        </div> 
+      </figure>
+  
+      <!-- Text -->
+      <div class="card-body w-full px-2 py-2 gap-0 justify-center ">
+
+          <!-- cat. & name -->
+          <div class="capitalize">
+           <p class="text-color text-left font-semibold">vegetable</p>
+           <h3 class="text-base text-left font-bold uppercase">Capsicum Red</h3>
+           <p class="text-base font-semibold text-gray-500 ">250 gm</p>
+
+          </div>
+          
+  
+          <!-- Quantity Control -->
+          <div class="flex items-center justify-between my-2">
+            
+            <!-- Price -->
+            <div> 
+              <p class="uppercase">
+                <span id="total-price" class="font-semibold">tk.235</span> 
+              </p>
+            </div>
+
+            <div class="flex flex-row items-center justify-center gap-4 border rounded-full p-1">
+              <button id="decrease" class="bg-gray-200 flex flex-col items-center justify-center rounded-full w-6 h-6 text-lg">−</button>
+              <span id="quantity" class="text-sm font-semibold">1</span>
+              <button id="increase" class="bg-gray-200 flex flex-col items-center justify-center rounded-full w-6 h-6 text-lg">+</button>
+            </div>
+          </div>
+  
+          <!-- Add to Cart Button -->
+          <div class="flex justify-center">
+           <button id="add-to-cart" class="rounded-lg font-semibold px-2 py-1 gap-2 flex items-center justify-center btn-bg-primary text-white group hover:px-4 duration-300">Add to Cart<i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i></button>
+          </div>
+      </div>
+
     </div>
 
     <!-- Cart-4 -->
-    <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">
-      <figure class="overflow-hidden flex items-center justify-center h-[65%]">
-        <img src="assets/img/cart/vegetable/carrot.webp" alt="carrot" class=" w-32 h-32 object-contain group-hover:scale-110 transition-transform duration-500">
+    <div class="card flex flex-col justify-center items-center p-4 rounded-md border relative group h-96" data-unit="kg">
+    
+      <!-- Image -->
+      <figure class="overflow-hidden flex items-center justify-center group h-3/5">
+        <img src="assets/img/cart/vegetable/carrot.webp" alt="carrot" class="w-5/6 object-contain group-hover:scale-110 transition-transform duration-500">
+        <div class="absolute inset-0 rounded-md bg-black bg-opacity-0 group-hover:bg-opacity-50 bottom-96 group-hover:bottom-48 transition-all duration-500 opacity-0 group-hover:opacity-100 flex justify-center items-center gap-4">
+          <a href="" class=""><i class='bx bx-zoom-in text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
+          <a href="cart.html"> <i class='bx bx-heart text-white text-5xl hover:scale-125 transition-transform duration-500'></i></a> 
+        </div> 
       </figure>
-      <div class="card-body h-1/4 text-center py-2">
-       <h3 class="text-xl text-center font-bold capitalize">carrot</h3>
-       <p class="text-base font-bold">$30.00 <span class="text-sm line-through text-gray-500">$23.00</span></p>
-      </div>
-      <!-- Hover-BG-Transparent-Effect -->
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
-      <a href="" class=""><i class='bx bx-search text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
-      <a href="cart.html"> <i class='bx bx-cart-alt text-white text-5xl hover:scale-125 transition-transform duration-500'></i> 
-      </a>
-     </div> 
-    </div>
+  
+      <!-- Text -->
+      <div class="card-body w-full px-2 py-2 gap-0 justify-center ">
 
+          <!-- cat. & name -->
+          <div class="capitalize">
+           <p class="text-color text-left font-semibold ">Vegetable</p>
+           <h3 class="text-base text-left font-bold uppercase">carrot</h3>
+           <p class="text-base font-semibold text-gray-500">250gm</p>
+
+          </div>
+          
+  
+          <!-- Quantity Control -->
+          <div class="flex items-center justify-between my-2">
+            
+            <!-- Price -->
+            <div> 
+              <p class="uppercase">
+                <span id="total-price" class="font-semibold">tk.35</span> 
+              </p>
+            </div>
+
+            <div class="flex flex-row items-center justify-center gap-4 border rounded-full p-1">
+              <button id="decrease" class="bg-gray-200 flex flex-col items-center justify-center rounded-full w-6 h-6 text-lg">−</button>
+              <span id="quantity" class="text-sm font-semibold">1</span>
+              <button id="increase" class="bg-gray-200 flex flex-col items-center justify-center rounded-full w-6 h-6 text-lg">+</button>
+            </div>
+          </div>
+  
+          <!-- Add to Cart Button -->
+          <div class="flex justify-center">
+           <button id="add-to-cart" class="rounded-lg font-semibold px-2 py-1 gap-2 flex items-center justify-center btn-bg-primary text-white group hover:px-4 duration-300">Add to Cart<i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i></button>
+          </div>
+      </div>
+
+    </div> 
 
     <!-- Cart-5 -->
-    <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">
-      <figure class="overflow-hidden flex items-center justify-center h-[65%]">
-        <img src="assets/img/cart/fruit/watermelons.webp" alt="watermelons" class="object-contain group-hover:scale-110 transition-transform duration-500">
+    <div class="card flex flex-col justify-center items-center p-4 rounded-md border relative group h-96" data-unit="piece">
+    
+      <!-- Image -->
+      <figure class="relative overflow-hidden group h-3/5">
+        <img src="assets/img/cart/snacks-spices/banana-chips.jpg" alt="banana-chips"
+          class="w-5/6 object-contain group-hover:scale-110 transition-transform duration-500">
+        
+        <!-- Hover Effect -->
+        <div class="absolute inset-0 bg-black bg-opacity-0 scale-y-0 group-hover:scale-y-100 group-hover:bg-opacity-50 origin-top transition-transform duration-700 rounded-md flex justify-center items-center gap-4">
+          <a href="" class=""><i class='bx bx-zoom-in text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
+          <a href="cart.html"> <i class='bx bx-heart text-white text-5xl hover:scale-125 transition-transform duration-500'></i></a>  
+        </div>
       </figure>
-      <div class="card-body h-1/4 text-center py-2">
-       <h3 class="text-xl text-center font-bold capitalize">watermelons</h3>
-       <p class="text-base font-bold">$30.00 <span class="text-sm line-through text-gray-500">$23.00</span></p>
+      
+  
+      <!-- Text -->
+      <div class="card-body w-full px-2 py-2 gap-0 justify-center ">
+
+          <!-- cat. & name -->
+          <div class="capitalize">
+           <p class="text-color text-left font-semibold ">snacks-spices</p>
+           <h3 class="text-base text-left font-bold uppercase">banana-chips</h3>
+          </div>
+          
+  
+          <!-- Quantity Control -->
+          <div class="flex items-center justify-between my-2">
+            
+            <!-- Price -->
+            <div> 
+              <p class="uppercase">
+                <span id="total-price" class="font-semibold">tk.35</span> 
+              </p>
+            </div>
+
+            <div class="flex flex-row items-center justify-center gap-4 border rounded-full p-1">
+              <button id="decrease" class="bg-gray-200 flex flex-col items-center justify-center rounded-full w-6 h-6 text-lg">−</button>
+              <span id="quantity" class="text-sm font-semibold">1</span>
+              <button id="increase" class="bg-gray-200 flex flex-col items-center justify-center rounded-full w-6 h-6 text-lg">+</button>
+            </div>
+          </div>
+  
+          <!-- Add to Cart Button -->
+          <div class="flex justify-center">
+           <button id="add-to-cart" class="rounded-lg font-semibold px-2 py-1 gap-2 flex items-center justify-center btn-bg-primary text-white group hover:px-4 duration-300">Add to Cart<i class='bx bx-right-arrow-alt text-2xl group-hover:-rotate-45 transition-transform duration-400'></i></button>
+          </div>
       </div>
-      <!-- Hover-BG-Transparent-Effect -->
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
-      <a href="" class=""><i class='bx bx-search text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
-      <a href="cart.html"> <i class='bx bx-cart-alt text-white text-5xl hover:scale-125 transition-transform duration-500'></i> 
-      </a>
-     </div> 
-    </div>
+
+    </div> 
 
     <!-- Cart-6 -->
     <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">

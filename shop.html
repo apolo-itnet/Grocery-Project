@@ -4,38 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grocery E-commerce</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.0/dist/full.css" rel="stylesheet">
-
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Tailwind & daisyUI -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
   
+    <!-- google-font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
   
+    <!-- boxicons & font-awesome icon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
     <style type="text/tailwindcss">
 
-      .navbar {
-          height: 60px; 
+        .bg-primary {
+          background-color: #3BB77E;
+          color: white;
         }
-           
-        .hero {
-          height: calc(100vh - 134px);
-        }
-      
+
         .bg-primary-color {
-          background-color: #DEF9EC;
-          background-color: #16a34a;
           background-color: #3BB77E;
           color: white;
         }
         
         .text-color {
-          color: #228B22;
           color: #3BB77E;
         }
       
@@ -48,10 +43,30 @@
         }
         
         .btn-bg-primary {
-          background-color: #179800;
           background-color: #3BB77E;
           border: none;
           color: white;
+        }
+
+        .cart-bg {
+          background-color: #F1F1F1;
+        }
+
+
+        .menu-hover {
+          @apply hover:bg-[#3BB77E] hover:text-white transition-colors duration-200 ease-in-out cursor-pointer
+        }
+
+        .scale-hover {
+          @apply hover:scale-105 transition-transform duration-700 ease-in-out rounded-lg 
+        }
+
+        .discount-banner {
+          background: url(assets/img/banner/disc-banner-1.jpg) no-repeat center / cover ;
+        }
+
+        .discount-banner-2 {
+          background: url(assets/img/cart/dairy/chocolate/chocolate-gift.webp) no-repeat center / contain ;
         }
       
         .btn-padding-1 {
@@ -60,6 +75,13 @@
       
         .btn-padding-2 {
             padding: .55rem 1.5rem;
+        }
+
+        .news-letter-bg{
+          background: url(./assets/img/news-letter/back-bg.png)  ;
+          background-position: 530px;
+          background-size: cover;
+          background-repeat: no-repeat;
         }
       
         .marquee-container {
@@ -90,119 +112,195 @@
 </head>
 
 <body>
-   <!-- navbar -->
-   <header id="home" class="">
 
+  <!-- navbar -->
+  <header id="home" class="flex flex-col">
 
-      <!-- টপ পার্ট -->
-      <nav class="p-4">
-          <div class="container mx-auto flex justify-around items-center">
+    <!-- navbar-1 -->
+    <nav class="py-3 border-b">
+        <div class="container mx-auto flex justify-around items-center">
 
-              <!-- লোগো -->
-              <div class="flex items-start justify-start ">
-                <div>
-                  <a href="index.html" class="btn btn-ghost text-xl w-28 md:w-28 hidden md:flex px-0"> <img src="assets/img/logo-header.png" alt=""></a>
-                </div>
-                <div class="">
-                  <a href="index.html" class="btn btn-ghost text-xl md:hidden hover:bg-transparent hover:shadow-none"> <img src="assets/img/leaf-logo.png" alt="" class="h-12 w-12"></a>
-                </div>
+            <!-- logo-->
+            <div class="flex items-start justify-start ">
+              <div>
+                <a href="index.html" class="btn btn-ghost text-xl w-28 md:w-28 hidden md:flex px-0"> <img src="assets/img/logo-header.png" alt=""></a>
               </div>
-
-              <!-- সেন্টার মেনু -->
-              <div class="flex items-center"> 
-
-                <!-- category-menu -->
-                <div class="relative bg-gray-200 px-4 py-2 ">
-                    <button class="flex items-center space-x-2">
-                        <span>All Categories</span>
-                        <i class='bx bx-chevron-down'></i>
-                    </button>
-                    <!-- ড্রপডাউন মেনু -->
-                    <div class="absolute hidden bg-white text-black mt-2 p-2 rounded shadow-lg">
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Fruits</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Vegetables</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Dairy</a>
-                    </div>
-                </div>
-
-                <!-- সার্চ বার -->
-                <div class="flex items-center bg-gray-200 overflow-hidden m-0">
-                    <input type="text" placeholder="Search for Items..." class="px-4 py-2 w-64 bg-gray-200 text-black focus:outline-none">
-                    <button class="btn-bg-primary px-4 py-2">
-                        <i class='bx bx-search text-white'></i>
-                    </button>
-                </div>
-
-              </div>
-
-              <!-- cart & wish list -->
-              <div  class="flex justify-center items-center gap-4">
-
-                <!-- উইশলিস্ট -->
-                <a href="#" class="hover:bg-[#3BB77E] hover:text-white text-black text-sm py-1 px-1 flex items-center gap-2 rounded-lg w-24"> <i class='bx bx-heart text-3xl'></i>Wishlist</a>
-
-              <!-- কার্ট -->
-                <a href="#" class="hover:bg-[#3BB77E] hover:text-white text-black text-sm py-1 px-1 flex items-center gap-2 rounded-lg w-24"> <i class='bx bx-cart text-3xl'></i>My Cart</a>
-
-              </div>
-              
-    
-              <!-- ডান পাশের মেনু -->
-              <div class="flex items-center space-x-6">
-              
-              <!-- অ্যাকাউন্ট ড্রপডাউন -->
-              <div class="relative">
-                        <button class="flex items-center space-x-2">
-                            <i class='bx bx-user-circle text-3xl'></i>
-                            <i class='bx bx-chevron-down text-2xl'></i>
-                        </button>
-                        <!-- ড্রপডাউন মেনু -->
-                        <div class="absolute hidden bg-white text-black mt-2 p-2 rounded shadow-lg">
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Profile</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Logout</a>
-                        </div>
+              <div class="">
+                <a href="index.html" class="btn btn-ghost text-xl md:hidden hover:bg-transparent hover:shadow-none"> <img src="assets/img/leaf-logo.png" alt="" class="h-12 w-12"></a>
               </div>
             </div>
 
-          </div>
-      </nav>
-  
-      <!-- ডাউন পার্ট -->
-      <nav class="pb-4">
-          <div class="container mx-auto flex justify-around items-center">
-              <!-- Browse All Categories বাটন -->
-              <button class="btn-bg-primary px-4 py-2 rounded flex items-center space-x-2">
-                  <i class='bx bx-menu'></i>
-                  <span>Browse All Categories</span>
-              </button>
-  
-              <!-- সেন্টার মেনু -->
-              <div class="hidden lg:flex">
-                <ul class="flex justify-between items-center text-base">
-                  <li class="hover:bg-[#3bb77e] hover:text-white transition-colors duration-500 ease-in-out rounded-lg p-2 w-24 text-center">
-                    <a href="blog.html">Hot Deals</a></li>
+            <!-- center-menu -->
+            <div class="flex items-center"> 
 
-                  <li class="hover:bg-[#3bb77e] hover:text-white transition-colors duration-500 ease-in-out rounded-lg p-2 w-24 text-center">
-                    <a href="shop.html">Shop</a></li>
+              <!-- all- category-menu -->
+              <details class="dropdown rounded-none bg-gray-200 cursor-pointer">
+                <summary class="h-10 px-2 border-r-2  border-gray-500 rounded-none flex items-center justify-center"><span>All Categories</span>
+                  <i class='bx bx-chevron-down text-xl'></i></summary>
+                
+                  <!-- dropdown-menu -->
+                  <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 top-12  shadow-lg border border-gray-200">
+                    <li class="hover:bg-[#3BB77E] hover:text-white rounded-lg text-sm "><a href="">Fruits</a></li>
+                    <li class="hover:bg-[#3BB77E] hover:text-white rounded-lg text-sm "><a href="">Vegetables</a></li>
+                    <li class="hover:bg-[#3BB77E] hover:text-white rounded-lg text-sm "><a href="">Meats</a></li>
+                    <li class="hover:bg-[#3BB77E] hover:text-white rounded-lg text-sm "><a href="">Dairy</a></li>
+                    <li class="hover:bg-[#3BB77E] hover:text-white rounded-lg text-sm "><a href="">Bakery</a></li>
+                    <li class="hover:bg-[#3BB77E] hover:text-white rounded-lg text-sm "><a href="">Drinks</a></li>
+                  </ul>
+              </details>
 
-                  <li class="hover:bg-[#3bb77e] hover:text-white transition-colors duration-500 ease-in-out rounded-lg p-2 w-24 text-center  text-base "><a href="service.html"  ">Service</a></li>
-
-                  <li class="hover:bg-[#3bb77e] hover:text-white transition-colors duration-500 ease-in-out rounded-lg p-2 w-24 text-center  text-base "><a href="about.html"  >About</a></li>
-
-                  <li class="hover:bg-[#3bb77e] hover:text-white transition-colors duration-500 ease-in-out rounded-lg  p-2 w-24 text-center text-base "><a href="contact.html"  >Contact us</a></li>
-
-                </ul>
+              <!-- search-bar -->
+              <div class="flex items-center bg-gray-200 overflow-hidden m-0">
+                  <input type="text" placeholder="Search for Items..." class="px-4 py-2 w-64 bg-gray-200 text-black focus:outline-none">
+                  <button class="btn-bg-primary px-4 py-2">
+                      <i class='bx bx-search text-white'></i>
+                  </button>
               </div>
-  
-              <!-- ফোন নম্বর -->
-              <div class="flex items-center space-x-2">
-                  <i class='bx bx-headphone text-2xl'></i>
-                  <h3 class="text-green-600">1233-7777 <span class="text-black"> 24/7 Support Center</span></h3>
-              </div>
+
+            </div>
+
+            <!-- wishlist - cart - profile -->
+            <div  class="flex justify-center items-center gap-4">
+
+              <!-- wishlist -->
+              <a href="#" class="menu-hover text-sm py-1 px-1 flex items-center gap-2 rounded-lg w-24"> <i class='bx bx-heart text-3xl'></i>Wishlist</a>
+
+              <!-- cart -->
+              <a href="#" class="menu-hover text-sm py-1 px-1 flex items-center gap-2 rounded-lg w-24"> <i class='bx bx-cart text-3xl'></i>My Cart</a>
+
+              <!-- profile-icon-dropdown -->
+            <div class="relative">
+              <div class="dropdown">
+                <div tabindex="0" role="button" class="btn m-1">
+                  <i class='bx bx-user-circle text-3xl'></i>
+                  <i class='bx bx-chevron-down text-2xl'></i>
+                </div>
+                  <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-40 p-2 top-16 shadow">
+                    <li class="menu-hover rounded-lg"><a href="" class="font-semibold">Login</a></li>
+                    <li class="menu-hover rounded-lg"><a href="" class="font-semibold">Register</a></li>
+                  </ul>
+                </div>
+            </div>
           </div>
-      </nav>
-    
-   </header>
+        </div>
+    </nav>
+
+    <!-- navbar-2 -->
+    <nav class="py-2">
+        <div class="container mx-auto flex justify-around items-center">
+
+            <!-- Browse All Categories button -->
+            <button class="btn-bg-primary px-4 py-2 rounded flex items-center space-x-2"> <i class='bx bx-menu'></i> <span>Browse All Categories</span> </button>
+
+            <!-- center-menu -->
+            <div class="hidden lg:flex">
+              <ul class="flex justify-between items-center text-base">
+                <li class="menu-hover rounded-lg p-2 w-24 text-center">
+                  <a href="index.html">Home</a></li>
+
+                <!-- mega-menu -->
+                <li class=""> 
+                  <div class="dropdown dropdown-hover relative ">
+                    <div tabindex="0" role="button" class=" m-1"><a href="#" class="flex items-center justify-center menu-hover w-24 py-1 rounded-lg">Shop<i class='bx bx-chevron-down text-2xl'></i>
+                    </a> </div>
+                    <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] p-2 min-w-max shadow flex flex-col lg:flex-row border-t top-14 -left-96 text-base">
+                      
+                      <!-- veg-menu -->
+                      <li>
+                        <a href="shop.html" class="font-bold scale-hover">Fresh Vegetable <img src="assets/img/fruits-category/vegetable.webp" alt="" class="w-14"></a>
+                        <ul class="p-0 m-0">
+                          <li class=" menu-hover rounded-lg"><a href="#" class="h-10">Potato, Onion & Tomato</a></li>
+                          <li class=" menu-hover rounded-lg" class=" menu-hover rounded-lg"><a href="#" class="h-10">Cucumber & Capsicum</a></li>
+                          <li class=" menu-hover rounded-lg" class=" menu-hover rounded-lg"><a href="#" class="h-10">Leafy Vegetables</a></li>
+                          <li class=" menu-hover rounded-lg" class=" menu-hover rounded-lg"><a href="#" class="h-10">Root Vegetables</a></li>
+                          <li class=" menu-hover rounded-lg" class=" menu-hover rounded-lg"><a href="#" class="h-10">Pumpkin & Drumstick</a></li>
+                        </ul>
+                      </li>
+
+                      <!-- meats-menu -->
+                      <li>
+                        <a href="shop.html" class="font-bold scale-hover"
+                        >Meats<img src="assets/img/fruits-category/meats.webp" alt="" class="w-14"></a>
+                        <ul>
+                          <li class=" menu-hover rounded-lg"><a class="h-10">Beef</a></li>
+                          <li class=" menu-hover rounded-lg"><a class="h-10">Broiler Chicken</a></li>
+                          <li class=" menu-hover rounded-lg"><a class="h-10">Turkey</a></li>
+                          <li class=" menu-hover rounded-lg"><a class="h-10">Fresh Mutton</a></li>
+                          <li class=" menu-hover rounded-lg"><a class="h-10">Frozen Koyel</a></li>
+
+                          
+                        </ul>
+                      </li>
+
+                      <!-- fish-menu -->
+                      <li>
+                        <a href="shop.html" class="font-bold scale-hover">Fish <img src="assets/img/fruits-category/fish.webp" alt="" class="w-14"></a>
+                        <ul>
+                          <li class=" menu-hover rounded-lg"><a class="h-10">Pond fish</a></li>
+                          <li class=" menu-hover rounded-lg"><a class="h-10">Frozen Fish</a></li>
+                          <li class=" menu-hover rounded-lg"><a class="h-10">Marine Water Fish</a></li>
+                          <li class=" menu-hover rounded-lg"><a class="h-10">Prawns & Shrimps</a></li>
+                          <li class=" menu-hover rounded-lg"><a class="h-10">Other Seafood</a></li>
+                        </ul>
+                      </li>
+
+                      <!-- bakery-menu -->
+                      <li>
+                        <a href="shop.html" class="font-bold scale-hover">Bakery <img src="assets/img/fruits-category/bakery.webp" alt="" class="w-14"></a>
+                        <ul>
+                          <li class=" menu-hover rounded-lg"><a class="h-10">Bread & Garlic Bread</a></li>
+                          <li class=" menu-hover rounded-lg"><a class="h-10">Puffs & Cheese</a></li>
+                          <li class=" menu-hover rounded-lg"><a class="h-10">Patties & Sandwiches</a></li>
+
+                          <!-- dairy-menu -->
+                          <li>
+                            <a class="font-bold scale-hover">Dairy <img src="assets/img/fruits-category/dairy.webp" alt="" class="w-14"></a>
+                            <ul>
+                              <li class=" menu-hover rounded-lg"><a class="h-10">Milk & Crud</a></li>
+                              <li class=" menu-hover rounded-lg"><a class="h-10">Panner & Cream</a></li>
+                              <li class=" menu-hover rounded-lg"><a class="h-10">Butter & Butter Milk</a></li>
+                              <li class=" menu-hover rounded-lg"><a class="h-10">Chesse & Soya Milk</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <!-- fruits-menu -->
+                      <li>
+                        <a href="shop.html" class="font-bold scale-hover">Fruits<img src="assets/img/fruits-category/fruits.webp" alt="" class="w-14"></a>
+                        <ul>
+                          <li class=" menu-hover rounded-lg"><a class="h-10">Apples & Mangos</a></li>
+                          <li class=" menu-hover rounded-lg"><a class="h-10">Seasonal Fruits</a></li>
+                          <li class=" menu-hover rounded-lg"><a class="h-10">Papaya & Dragon Fruits</a></li>
+                          <li class=" menu-hover rounded-lg"><a class="h-10">Organic Fruits</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <!-- service-menu -->
+                <li class="menu-hover rounded-lg p-2 w-24 text-center  text-base "><a href="service.html"  ">Service</a></li>
+
+                <!-- about-menu -->
+                <li class="menu-hover rounded-lg p-2 w-24 text-center  text-base "><a href="about.html"  >About</a></li>
+
+                <!-- contact-menu -->
+                <li class="menu-hover rounded-lg  p-2 w-24 text-center text-base "><a href="contact.html"  >Discover</a></li>
+
+              </ul>
+            </div>
+
+            <!-- phone-number -->
+            <div class="flex items-center space-x-2">
+                <i class='bx bx-headphone text-2xl'></i>
+                <h3 class="text-green-600">1233-7777 <span class="text-black"> 24/7 Support Center</span></h3>
+            </div>
+        </div>
+    </nav>
+
+  
+  </header>
 
   <!-- marque-section -->
   <section class="marquee-container overflow-hidden bg-primary-color">
@@ -224,10 +322,10 @@
   <section class="container mx-auto my-12">
     <h2 class="text-4xl font-bold text-center mb-8">Our Categories</h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
         
     <!-- category 1 - fruits -->
-    <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden group">
+    <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 group">
 
         <!-- image -->
         <img src="assets/img/fruits-category/fruits.webp" alt="Fruits" class="w-10/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-125">
@@ -242,7 +340,7 @@
     </div>
 
     <!-- category 2 - vegetable -->
-    <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden group">
+    <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 group">
             <img src="assets/img/fruits-category/vegetable.webp" alt="Vegetables" class="w-10/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-125">
             <div class="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center">
             <a href="product.html"> 
@@ -252,8 +350,8 @@
     </div>
 
     <!-- category 3 - dairy -->
-    <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden group">
-            <img src="assets/img/fruits-category/dairy.webp" alt="Dairy" class="w-10/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+    <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 group">
+            <img src="assets/img/fruits-category/dairy.webp" alt="Dairy" class="w-8/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
             <div class="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center">
             <a href="product.html"> 
               <h2 class="text-3xl font-bold text-white">Dairy</h2>
@@ -261,8 +359,18 @@
             </div>
     </div>
 
-    <!-- category 4 - meats-->
-    <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden group">
+    <!-- category 3 - dairy -->
+    <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 group">
+            <img src="assets/img/fruits-category/fish.webp" alt="fish" class="w-8/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+            <a href="product.html"> 
+              <h2 class="text-3xl font-bold text-white">Fish</h2>
+            </a> 
+            </div>
+    </div>
+
+    <!-- category 5 - meats-->
+    <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 group">
             <img src="assets/img/fruits-category/meats.webp" alt="Meat" class="w-10/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-125">
             <div class="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center">
             <a href="product.html"> 
@@ -271,8 +379,8 @@
             </div>
     </div>
 
-    <!-- category 5 - bakery -->
-    <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden group">
+    <!-- category 6 - bakery -->
+    <div class="category-card rounded-lg shadow-lg flex justify-center items-center cursor-pointer relative overflow-hidden p-4 group">
             <img src="assets/img/fruits-category/bakery.webp" alt="Bakery" class="w-10/12 object-cover transition-transform duration-700 ease-in-out group-hover:scale-125">
             <div class="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center">
             <a href="product.html"> 
@@ -298,264 +406,9 @@
     </div>
 
     <!-- Product-Card-Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+    <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
-    <!-- Cart-1 -->
-    <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">
-      <figure class="overflow-hidden flex items-center justify-center h-[65%]">
-        <img src="assets/img/cart/fruit/strawberries.webp" alt="strawberries" class=" w-32 h-32 object-contain group-hover:scale-110 transition-transform duration-500">
-      </figure>
-      <div class="card-body h-1/4 text-center py-2">
-       <h3 class="text-xl text-center font-bold capitalize">strawberries</h3>
-       <p class="text-base font-bold">$30.00 <span class="text-sm line-through text-gray-500">$23.00</span></p>
-      </div>
-      <!-- Hover-BG-Transparent-Effect -->
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
-      <a href="" class=""><i class='bx bx-search text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
-      <a href="cart.html"> <i class='bx bx-cart-alt text-white text-5xl hover:scale-125 transition-transform duration-500'></i> 
-      </a>
-     </div> 
-    </div>
-        
-    <!-- Cart-2 -->
-    <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">
-      <figure class="overflow-hidden flex items-center justify-center h-[65%]">
-        <img src="assets/img/cart/vegetable/cucumbers.webp" alt="cucumbers" class=" w-32 h-32 object-contain group-hover:scale-110 transition-transform duration-500">
-      </figure>
-      <div class="card-body h-1/4 text-center py-2">
-       <h3 class="text-xl text-center font-bold capitalize">cucumbers</h3>
-       <p class="text-base font-bold">$30.00 <span class="text-sm line-through text-gray-500">$23.00</span></p>
-      </div>
-      <!-- Hover-BG-Transparent-Effect -->
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
-      <a href="" class=""><i class='bx bx-search text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
-      <a href="cart.html"> <i class='bx bx-cart-alt text-white text-5xl hover:scale-125 transition-transform duration-500'></i> 
-      </a>
-     </div> 
-    </div>
-
-    <!-- Cart-3 -->
-    <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">
-      <figure class="overflow-hidden flex items-center justify-center h-[65%]">
-        <img src="assets/img/cart/vegetable/sweet peppers.webp" alt="sweet peppers" class=" w-32 h-32 object-contain group-hover:scale-110 transition-transform duration-500">
-      </figure>
-      <div class="card-body h-1/4 text-center py-2">
-       <h3 class="text-xl text-center font-bold capitalize">sweet peppers</h3>
-       <p class="text-base font-bold">$30.00 <span class="text-sm line-through text-gray-500">$23.00</span></p>
-      </div>
-      <!-- Hover-BG-Transparent-Effect -->
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
-      <a href="" class=""><i class='bx bx-search text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
-      <a href="cart.html"> <i class='bx bx-cart-alt text-white text-5xl hover:scale-125 transition-transform duration-500'></i> 
-      </a>
-     </div> 
-    </div>
-
-    <!-- Cart-4 -->
-    <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">
-      <figure class="overflow-hidden flex items-center justify-center h-[65%]">
-        <img src="assets/img/cart/vegetable/carrot.webp" alt="carrot" class=" w-32 h-32 object-contain group-hover:scale-110 transition-transform duration-500">
-      </figure>
-      <div class="card-body h-1/4 text-center py-2">
-       <h3 class="text-xl text-center font-bold capitalize">carrot</h3>
-       <p class="text-base font-bold">$30.00 <span class="text-sm line-through text-gray-500">$23.00</span></p>
-      </div>
-      <!-- Hover-BG-Transparent-Effect -->
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
-      <a href="" class=""><i class='bx bx-search text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
-      <a href="cart.html"> <i class='bx bx-cart-alt text-white text-5xl hover:scale-125 transition-transform duration-500'></i> 
-      </a>
-     </div> 
-    </div>
-
-
-    <!-- Cart-5 -->
-    <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">
-      <figure class="overflow-hidden flex items-center justify-center h-[65%]">
-        <img src="assets/img/cart/fruit/watermelons.webp" alt="watermelons" class="object-contain group-hover:scale-110 transition-transform duration-500">
-      </figure>
-      <div class="card-body h-1/4 text-center py-2">
-       <h3 class="text-xl text-center font-bold capitalize">watermelons</h3>
-       <p class="text-base font-bold">$30.00 <span class="text-sm line-through text-gray-500">$23.00</span></p>
-      </div>
-      <!-- Hover-BG-Transparent-Effect -->
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
-      <a href="" class=""><i class='bx bx-search text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
-      <a href="cart.html"> <i class='bx bx-cart-alt text-white text-5xl hover:scale-125 transition-transform duration-500'></i> 
-      </a>
-     </div> 
-    </div>
-
-    <!-- Cart-6 -->
-    <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">
-      <figure class="overflow-hidden flex items-center justify-center h-[65%]">
-        <img src="assets/img/cart/fruit/galia melons.png" alt="galia melons" class=" w-32 h-32 object-contain group-hover:scale-110 transition-transform duration-500">
-      </figure>
-      <div class="card-body h-1/4 text-center py-2">
-       <h3 class="text-xl text-center font-bold capitalize">galia melons</h3>
-       <p class="text-base font-bold">$30.00 <span class="text-sm line-through text-gray-500">$23.00</span></p>
-      </div>
-      <!-- Hover-BG-Transparent-Effect -->
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
-      <a href="" class=""><i class='bx bx-search text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
-      <a href="cart.html"> <i class='bx bx-cart-alt text-white text-5xl hover:scale-125 transition-transform duration-500'></i> 
-      </a>
-     </div> 
-    </div>
-
-    <!-- Cart-7 -->
-    <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">
-      <figure class="overflow-hidden flex items-center justify-center h-[65%]">
-        <img src="assets/img/cart/fruit/lemon-seedless.jpg" alt="lemon-seedless" class=" w-32 h-32 object-contain group-hover:scale-110 transition-transform duration-500">
-      </figure>
-      <div class="card-body h-1/4 text-center py-2">
-       <h3 class="text-xl text-center font-bold capitalize">lemon-seedless</h3>
-       <p class="text-base font-bold">$30.00 <span class="text-sm line-through text-gray-500">$23.00</span></p>
-      </div>
-      <!-- Hover-BG-Transparent-Effect -->
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
-      <a href="" class=""><i class='bx bx-search text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
-      <a href="cart.html"> <i class='bx bx-cart-alt text-white text-5xl hover:scale-125 transition-transform duration-500'></i> 
-      </a>
-     </div> 
-    </div>
-
-    <!-- Cart-8 -->
-    <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">
-      <figure class="overflow-hidden flex items-center justify-center h-[65%]">
-        <img src="assets/img/cart/fruit/coconuts & pineapples.webp" alt="coconuts" class=" w-32 h-32 object-contain group-hover:scale-110 transition-transform duration-500">
-      </figure>
-      <div class="card-body h-1/4 text-center py-2">
-       <h3 class="text-xl text-center font-bold capitalize">coconuts</h3>
-       <p class="text-base font-bold">$30.00 <span class="text-sm line-through text-gray-500">$23.00</span></p>
-      </div>
-      <!-- Hover-BG-Transparent-Effect -->
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
-      <a href="" class=""><i class='bx bx-search text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
-      <a href="cart.html"> <i class='bx bx-cart-alt text-white text-5xl hover:scale-125 transition-transform duration-500'></i> 
-      </a>
-     </div> 
-    </div>
-
-    <!-- Cart-9 -->
-    <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">
-      <figure class="overflow-hidden flex items-center justify-center h-[65%]">
-        <img src="assets/img/cart/fruit/blue berries.jpg" alt="blue berries" class=" w-32 h-32 object-contain group-hover:scale-110 transition-transform duration-500">
-      </figure>
-      <div class="card-body h-1/4 text-center py-2">
-       <h3 class="text-xl text-center font-bold capitalize">blue berries</h3>
-       <p class="text-base font-bold">$30.00 <span class="text-sm line-through text-gray-500">$23.00</span></p>
-      </div>
-      <!-- Hover-BG-Transparent-Effect -->
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
-      <a href="" class=""><i class='bx bx-search text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
-      <a href="cart.html"> <i class='bx bx-cart-alt text-white text-5xl hover:scale-125 transition-transform duration-500'></i> 
-      </a>
-     </div> 
-    </div>
-
-    <!-- Cart-10 -->
-    <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">
-      <figure class="overflow-hidden flex items-center justify-center h-[65%]">
-        <img src="assets/img/cart/fruit/peaches.webp" alt="peaches" class=" w-32 h-32 object-contain group-hover:scale-110 transition-transform duration-500">
-      </figure>
-      <div class="card-body h-1/4 text-center py-2">
-       <h3 class="text-xl text-center font-bold capitalize">peaches</h3>
-       <p class="text-base font-bold">$30.00 <span class="text-sm line-through text-gray-500">$23.00</span></p>
-      </div>
-      <!-- Hover-BG-Transparent-Effect -->
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
-      <a href="" class=""><i class='bx bx-search text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
-      <a href="cart.html"> <i class='bx bx-cart-alt text-white text-5xl hover:scale-125 transition-transform duration-500'></i> 
-      </a>
-     </div> 
-    </div>
-
-    <!-- Cart-11 -->
-    <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">
-      <figure class="overflow-hidden flex items-center justify-center h-[65%]">
-        <img src="assets/img/cart/bakery/bread.webp" alt="bread" class=" w-32 h-32 object-contain group-hover:scale-110 transition-transform duration-500">
-      </figure>
-      <div class="card-body h-1/4 text-center py-2">
-       <h3 class="text-xl text-center font-bold capitalize">bread</h3>
-       <p class="text-base font-bold">$30.00 <span class="text-sm line-through text-gray-500">$23.00</span></p>
-      </div>
-      <!-- Hover-BG-Transparent-Effect -->
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
-      <a href="" class=""><i class='bx bx-search text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
-      <a href="cart.html"> <i class='bx bx-cart-alt text-white text-5xl hover:scale-125 transition-transform duration-500'></i> 
-      </a>
-     </div> 
-    </div>
-
-    <!-- Cart-12 -->
-    <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">
-      <figure class="overflow-hidden flex items-center justify-center h-[65%]">
-        <img src="assets/img/cart/dairy/curds.png" alt="curds" class=" w-32 h-32 object-contain group-hover:scale-110 transition-transform duration-500">
-      </figure>
-      <div class="card-body h-1/4 text-center py-2">
-       <h3 class="text-xl text-center font-bold capitalize">curds</h3>
-       <p class="text-base font-bold">$30.00 <span class="text-sm line-through text-gray-500">$23.00</span></p>
-      </div>
-      <!-- Hover-BG-Transparent-Effect -->
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
-      <a href="" class=""><i class='bx bx-search text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
-      <a href="cart.html"> <i class='bx bx-cart-alt text-white text-5xl hover:scale-125 transition-transform duration-500'></i> 
-      </a>
-     </div> 
-    </div>
-
-    <!-- Cart-13 -->
-    <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">
-      <figure class="overflow-hidden flex items-center justify-center h-[65%]">
-        <img src="assets/img/cart/dairy/milk.webp" alt="milk" class=" w-32 h-32 object-contain group-hover:scale-110 transition-transform duration-500">
-      </figure>
-      <div class="card-body h-1/4 text-center py-2">
-       <h3 class="text-xl text-center font-bold capitalize">milk</h3>
-       <p class="text-base font-bold">$30.00 <span class="text-sm line-through text-gray-500">$23.00</span></p>
-      </div>
-      <!-- Hover-BG-Transparent-Effect -->
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
-      <a href="" class=""><i class='bx bx-search text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
-      <a href="cart.html"> <i class='bx bx-cart-alt text-white text-5xl hover:scale-125 transition-transform duration-500'></i> 
-      </a>
-     </div> 
-    </div>
-
-    <!-- Cart-14 -->
-    <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">
-      <figure class="overflow-hidden flex items-center justify-center h-[65%]">
-        <img src="assets/img/cart/rice/white rice bag.webp" alt="rice" class=" w-32 h-32 object-contain group-hover:scale-110 transition-transform duration-500">
-      </figure>
-      <div class="card-body h-1/4 text-center py-2">
-       <h3 class="text-xl text-center font-bold capitalize">White Rice</h3>
-       <p class="text-base font-bold">$30.00 <span class="text-sm line-through text-gray-500">$23.00</span></p>
-      </div>
-      <!-- Hover-BG-Transparent-Effect -->
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
-      <a href="" class=""><i class='bx bx-search text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
-      <a href="cart.html"> <i class='bx bx-cart-alt text-white text-5xl hover:scale-125 transition-transform duration-500'></i> 
-      </a>
-     </div> 
-    </div>
-
-    <!-- Cart-15 -->
-    <div class="card bg-base-100 shadow-xl relative group cursor-pointer h-72">
-      <figure class="overflow-hidden flex items-center justify-center h-[65%]">
-        <img src="assets/img/cart/bakery/bagels.webp" alt="bagels" class=" w-32 h-32 object-contain group-hover:scale-110 transition-transform duration-500">
-      </figure>
-      <div class="card-body h-1/4 text-center py-2">
-       <h3 class="text-xl text-center font-bold capitalize">bagels</h3>
-       <p class="text-base font-bold">$30.00 <span class="text-sm line-through text-gray-500">$23.00</span></p>
-      </div>
-      <!-- Hover-BG-Transparent-Effect -->
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-500 flex justify-center items-center opacity-0 group-hover:opacity-100 gap-4">
-      <a href="" class=""><i class='bx bx-search text-white text-5xl hover:scale-125 transition-transform duration-500 '></i></a>
-      <a href="cart.html"> <i class='bx bx-cart-alt text-white text-5xl hover:scale-125 transition-transform duration-500'></i> 
-      </a>
-     </div> 
-    </div>
-
+  
     </div>
   </section>
 
