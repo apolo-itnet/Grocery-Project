@@ -158,9 +158,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+
 // category wise product show
-
-
 // বাটন ধরা
 const allBtn = document.querySelector('.all-product');
 const vegBtn = document.querySelector('.vegetable');
